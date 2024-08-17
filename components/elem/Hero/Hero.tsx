@@ -4,7 +4,6 @@ import styles from './Hero.module.scss';
 export type HeroProps = {
   primaryHeading: string;
   secondaryHeading: string;
-  bg: ImageData;
 };
 
 const Hero = (props: HeroProps): JSX.Element => {
