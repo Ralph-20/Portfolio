@@ -1,0 +1,59 @@
+@use 'sass:math';
+@function rem($px-value) {
+  @return math.div($px-value, 16px) * 1rem;
+}
+
+:root {
+  --container__padding-x: 2rem;
+}
+
+.container-6 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container__max-width, calc(rem(700px) + var(--container__padding-x) * 2));
+  padding-left: var(--container__padding-x);
+  padding-right: var(--container__padding-x);
+}
+
+.container-7 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container__max-width, calc(rem(810px) + var(--container__padding-x) * 2));
+  padding-left: var(--container__padding-x);
+  padding-right: var(--container__padding-x);
+}
+
+.container-8 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container__max-width, calc(rem(925px) + var(--container__padding-x) * 2));
+  padding-left: calc(var(--container__padding-x) / 2);
+  padding-right: calc(var(--container__padding-x) / 2);
+  @include respond-to(tablet) {
+    font-size: 4rem;
+    padding-right: var(--container__padding-x);
+    padding-left: var(--container__padding-x);
+  }
+  // @include respond-to(desktop) {
+  //   font-size: 5rem;
+  // }
+}
+
+.container-10 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container__max-width, calc((1150px) + var(--container__padding-x) * 2));
+  padding-left: var(--container__padding-x);
+  padding-right: var(--container__padding-x);
+}
+
+.container-12 {
+  width: 100%;
+  padding-left: var(--container__padding-x);
+  padding-right: var(--container__padding-x);
+}
+

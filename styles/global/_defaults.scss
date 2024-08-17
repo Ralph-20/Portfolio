@@ -20,7 +20,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-underline-position: under;
   color: var(--colors__black);
-  background-color: #2b2929;
+  background-color: $colors__grey-strong;
 }
 
 main {

@@ -1,0 +1,25 @@
+:root {
+  --component-spacing-M: 2.5rem;
+  --component-spacing-L: 4rem;
+  --spacer__default-spacing: var(--component-spacing-M);
+}
+
+.spacer {
+  padding-top: var(--spacer__padding-top, var(--spacer__padding-y, var(--spacer__default-spacing)));
+  padding-bottom: var(
+    --spacer__padding-bottom,
+    var(--spacer__padding-y, var(--spacer__default-spacing))
+  );
+}
+
+.spacer-L {
+  padding-top: var(--spacer__padding-top, var(--spacer__padding-y, var(--spacer__default-spacing)));
+  padding-bottom: var(
+    --spacer__padding-bottom,
+    var(--spacer__padding-y, var(--spacer__default-spacing))
+  );
+
+  @include media('>=tablet-landscape') {
+    --spacer__default-spacing: var(--component-spacing-L);
+  }
+}
