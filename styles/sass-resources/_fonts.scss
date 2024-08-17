@@ -1,0 +1,46 @@
+// import at the top here your google font if that's what is being used
+// @import url('https://fonts.googleapis.com/css2?family=GFS+Didot&family=Noto+Serif+JP:wght@200;300;400;500;600;700&display=swap');
+
+$fonts__base-size: 16px;
+$fonts__font-weight--xs: 100;
+$fonts__font-weight--s: 200;
+$fonts__font-weight--sm: 300;
+$fonts__font-weight--s: 400;
+$fonts__font-weight--m: 500;
+$fonts__font-weight--mh: 600;
+$fonts__font-weight--h: 700;
+
+$fonts-sans: sans-serif;
+
+$font-family__main: $fonts-sans;
+
+@mixin fonts__h1 {
+  font-family: $font-family__main;
+  font-size: 5rem;
+  font-style: normal;
+  line-height: 120%;
+  font-weight: $fonts__font-weight--xs;
+}
+
+@mixin fonts__h2 {
+  font-family: $font-family__main;
+  font-size: 3rem;
+  font-style: normal;
+  line-height: 120%;
+  font-weight: $fonts__font-weight--xs;
+}
+@mixin fonts__h3 {
+  font-family: $font-family__main;
+  font-size: 1.75rem;
+  font-style: normal;
+  line-height: 100%;
+  font-weight: $fonts__font-weight--m;
+}
+
+@mixin fonts__p {
+  font-family: $font-family__main;
+  font-size: 1.25rem;
+  font-style: normal;
+  line-height: 120%;
+  font-weight: $fonts__font-weight--s;
+}

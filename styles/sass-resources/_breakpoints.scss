@@ -1,0 +1,60 @@
+@use 'sass:map';
+
+// Usage and documentation can be found at: https://eduardoboucas.github.io/include-media/
+@import './../../node_modules/include-media/dist/include-media';
+
+$breakpoints__phone-small: 375px;
+$breakpoints__phone: 450px;
+$breakpoints__tablet-portrait: 768px;
+$breakpoints__tablet-middle: 900px;
+$breakpoints__tablet-landscape: 1024px;
+$breakpoints__desktop: 1200px;
+$breakpoints__desktop-large: 1440px;
+$breakpoints__desktop-xlarge: 1920px;
+$breakpoints__desktop-xxlarge: 2880px;
+$breakpoints__desktop-4k: 3840px;
+$device-breakpoints: (
+  'phone-small': $breakpoints__phone-small,
+  'phone': $breakpoints__phone,
+  'tablet-portrait': $breakpoints__tablet-portrait,
+  'tablet-landscape': $breakpoints__tablet-landscape,
+  'desktop': $breakpoints__desktop,
+  'desktop-large': $breakpoints__desktop-large,
+  'desktop-xlarge': $breakpoints__desktop-xlarge,
+  'desktop-xxlarge': $breakpoints__desktop-xxlarge,
+  'desktop-4k': $breakpoints__desktop-4k,
+);
+$shared-component-breakpoints: (
+  'PeopleDetailLayout__two-column': 768px,
+);
+$breakpoints: map.merge($device-breakpoints, $shared-component-breakpoints);
+
+// _mixins.scss (you can name it as you like)
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (min-width: 520px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == mid {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $breakpoint == laptop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == desklarge {
+    @media (min-width: 1700px) {
+      @content;
+    }
+  }
+  // Add more breakpoints as needed
+}

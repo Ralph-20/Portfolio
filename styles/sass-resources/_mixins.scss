@@ -1,0 +1,8 @@
+@mixin example1() {
+  border: 1px solid red;
+}
+
+@mixin focus() {
+  outline: 2px dotted;
+  outline-offset: 2px;
+}
