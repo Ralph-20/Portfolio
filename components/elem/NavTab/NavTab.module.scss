@@ -1,0 +1,9 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+// .main {
+//   border: 1px solid red;
+// }
+
+.linkLabel {
+  @include fonts__nav;
+}

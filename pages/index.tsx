@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>LucasRal.dev</title>
+        <title>Lucas Ralph</title>
         <meta
           name="description"
           content="Portfolio of Lucas Ralph, Software developer with professional experience developing at One North International Digital Agency, Fast Enterprises, and other private clients. With 5 years of experience and a Computer Science degree from the University of Minnesota, I've got plenty of education and experience to provide the most digitally distinct, visibly pleasing, and accessible experience."
@@ -16,7 +16,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero primaryHeading={HeroData.primHead} secondaryHeading={HeroData.secHead} />
+      <Hero
+        primaryHeading={HeroData.primHead}
+        secondaryHeading={HeroData.secHead}
+        heroImg={HeroData.heroImg}
+      />
     </>
   );
 }

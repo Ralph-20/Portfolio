@@ -1,10 +1,10 @@
 :root {
-  --spacing-x-small: 1rem;
-  --spacing-small: 2rem;
-  --spacing-medium: 4rem;
-  --spacing-large: 6rem;
-  --spacing-x-large: 8rem;
+  --spacing-xs: 1rem;
+  --spacing-s: 2rem;
+  --spacing-m: 4rem;
+  --spacing-l: 6rem;
+  --spacing-xl: 8rem;
 
-  --component-spacing-normal: var(--spacing-medium);
+  --component-spacing-normal: var(--spacing-m);
 }
 

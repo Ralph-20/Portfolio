@@ -1,0 +1,20 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 3rem);
+  z-index: 2;
+  display: flex;
+  padding-block: 1.625rem 1.5rem;
+  margin-inline: 1.5rem;
+  // going to change once there is a logo in there too
+  justify-content: flex-end;
+  border-bottom: solid 1px rgba($color: $colors__white, $alpha: 0.5);
+}
+
+.tabs-container {
+  display: flex;
+  gap: var(--spacing-s);
+}

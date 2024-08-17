@@ -1,9 +1,31 @@
 {
-  "GlobalData": {},
+  "GlobalData": {
+    "Header": {
+      "tabs": [
+        {
+          "label": "About",
+          "href": "/"
+        },
+        {
+          "label": "Expertise",
+          "href": "/"
+        },
+        {
+          "label": "Contact",
+          "href": "/"
+        }
+      ]
+    }
+  },
   "SectionData": {
     "Hero": {
       "primHead": "Lucas Ralph",
-      "secHead": "Software Developer, Front End specialist"
+      "secHead": "Software Dev, Front End Specialist",
+      "heroImg": {
+        "src": "/images/pfp.jpeg",
+        "alt": "Lucas Ralph in Chicago",
+        "fill": true
+      }
     }
   }
 }
