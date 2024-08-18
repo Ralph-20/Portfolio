@@ -21,7 +21,7 @@ $font-family__main: $fonts-montserrat;
 
 @mixin fonts__h1 {
   font-family: $font-family__main;
-  font-size: 6rem;
+  font-size: 8rem;
   font-style: normal;
   line-height: 120%;
   font-weight: $fonts__font-weight--h;
@@ -42,6 +42,14 @@ $font-family__main: $fonts-montserrat;
   font-weight: $fonts__font-weight--m;
 }
 
+@mixin fonts__h4 {
+  font-family: $font-family__main;
+  font-size: 1.5rem;
+  font-style: normal;
+  line-height: 100%;
+  font-weight: $fonts__font-weight--m;
+}
+
 @mixin fonts__p {
   font-family: $font-family__main;
   font-size: 1.25rem;
@@ -52,8 +60,11 @@ $font-family__main: $fonts-montserrat;
 
 @mixin fonts__nav {
   font-family: $font-family__main;
-  font-size: 1rem;
+  font-size: 0.85rem;
+  @include respond-to(desktop) {
+    font-size: 0.75rem;
+  }
   font-style: normal;
-  line-height: 120%;
+  line-height: 110%;
   font-weight: $fonts__font-weight--s;
 }

@@ -1,6 +1,8 @@
 import Hero from '@/components/elem/Hero';
 import Head from 'next/head';
 import data from '../data/data.json';
+import Hero3d from '@/components/elem/Hero3d';
+import About from '@/components/elem/About';
 
 export default function Home() {
   const HeroData = data.SectionData.Hero;
@@ -16,11 +18,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Hero3d />
       <Hero
         primaryHeading={HeroData.primHead}
-        secondaryHeading={HeroData.secHead}
+        eyebrow={HeroData.eyebrow}
+        secondaryHeadings={HeroData.secHeads}
         heroImg={HeroData.heroImg}
       />
+      <About />
     </>
   );
 }

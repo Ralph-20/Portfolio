@@ -6,6 +6,11 @@ html {
   color: #fff;
 }
 
+*::selection {
+  background-color: $colors__neon-red;
+  color: $colors__neon-blue;
+}
+
 *,
 *::before,
 *::after {

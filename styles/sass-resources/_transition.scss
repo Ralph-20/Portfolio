@@ -1,0 +1,41 @@
+// Usage:   @include transition(width, height 0.3s ease-in-out);
+// Output:  -webkit-transition(width 0.2s, height 0.3s ease-in-out);
+//          transition(width 0.2s, height 0.3s ease-in-out);
+@use 'sass:list';
+
+@mixin transition($transitions...) {
+  $unfoldedTransitions: ();
+
+  @each $transition in $transitions {
+    $unfoldedTransitions: list.append($unfoldedTransitions, unfold($transition), comma);
+  }
+
+  transition: $unfoldedTransitions;
+}
+
+@function unfold($transition) {
+  // Default values
+  $property: all;
+  $duration: var(--transition-duration);
+  $easing: var(--transition-easing);
+  $delay: var(--transition-delay, 0s); // Browser default is 0, which is what we want
+  $defaultProperties: ($property, $duration, $easing, $delay);
+
+  // Grab transition properties if they exist
+  $unfoldedTransition: ();
+
+  @for $i from 1 through list.length($defaultProperties) {
+    $p: null;
+
+    @if $i <= list.length($transition) {
+      $p: list.nth($transition, $i);
+    } @else {
+      $p: list.nth($defaultProperties, $i);
+    }
+
+    $unfoldedTransition: list.append($unfoldedTransition, $p);
+  }
+
+  @return $unfoldedTransition;
+}
+

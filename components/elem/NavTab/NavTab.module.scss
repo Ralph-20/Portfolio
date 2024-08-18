@@ -6,4 +6,11 @@
 
 .linkLabel {
   @include fonts__nav;
+  @include transition(color);
+}
+
+.link {
+  &:hover {
+    color: $colors__neon-blue;
+  }
 }

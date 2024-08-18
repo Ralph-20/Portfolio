@@ -20,7 +20,8 @@
   "SectionData": {
     "Hero": {
       "primHead": "Lucas Ralph",
-      "secHead": "Software Dev, Front End Specialist",
+      "eyebrow": "Software Engineer, Front End Developer",
+      "secHeads": ["Software Engineer", "Web Developer", "Front End Specialist"],
       "heroImg": {
         "src": "/images/pfp.jpeg",
         "alt": "Lucas Ralph in Chicago",
