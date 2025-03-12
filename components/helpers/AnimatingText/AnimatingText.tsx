@@ -57,7 +57,7 @@ const AnimatingText = forwardRef<HTMLElement, AnimatingTextProps>(function Anima
         if (masterTimeline) {
           masterTimeline.set(splitText.lines, {
             opacity: 0,
-            rotateX: 100,
+            rotateX: 50,
             y: 100,
           });
           animation = gsap.to(splitText.lines, {

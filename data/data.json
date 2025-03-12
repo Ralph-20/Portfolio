@@ -27,6 +27,15 @@
         "alt": "Lucas Ralph in Chicago",
         "fill": true
       }
+    },
+    "About": {
+      "headline": "About",
+      "secondaryHead": "Me",
+      "description": "Heyo! My name is Lucas Ralph, and I'm a full-stack software engineer specializing in front end development. I'm based out of Mound, Minnesota (near the purified waters of Lake Minnetonka). I'm a proud graduate of U of Minnesota, and lover of the 4 seasons (hence why I never left!). In my free time, I enjoy weight lifting, playing video games, making little Arduino / Raspberry Pi projects, and as of recently ~ gardening and learning about plants!",
+      "image": {
+        "src": "/images/pfp.jpg",
+        "alt": "Lucas Ralph in Chicago"
+      }
     }
   }
 }

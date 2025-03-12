@@ -10,4 +10,4 @@ rm -rf .next
 rm -rf node_modules
 
 # Install dependencies
-npm install
+npm ci

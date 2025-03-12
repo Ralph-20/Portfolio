@@ -3,5 +3,68 @@
 .main {
   height: 100vh;
   position: relative;
-  background-color: $colors__grey-strong;
+  background-color: $colors__background;
+}
+
+.heading,
+.secondaryHead {
+  @include fonts__h2;
+}
+
+.cta {
+  border: solid 1px white;
+  padding: 1rem;
+  border-radius: 50px;
+}
+
+.heading-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  @include fonts__p;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  @include respond-to(tablet) {
+    flex-direction: row;
+  }
+  align-items: center;
+  justify-content: space-around;
+}
+
+.content-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--spacing-m);
+  @include respond-to(tablet) {
+    max-width: 50%;
+  }
+}
+
+.image {
+  object-fit: cover;
+}
+
+.image-container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  // border: 1px solid $colors__white;
+  border-radius: 50%;
 }

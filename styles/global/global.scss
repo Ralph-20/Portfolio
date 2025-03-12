@@ -7,3 +7,8 @@
 @import 'spacer';
 @import 'transition';
 @import 'fonts';
+
+// todo: move this to colors folder
+:root {
+  --colors__neon-blue: #00ead3;
+}

@@ -23,8 +23,8 @@
 .heading {
   @include fonts__h1;
   letter-spacing: 5px;
-  // margin-block-end: var(--spacing-s);
-  // text-shadow: 3px 3px $colors__neon-blue;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .subheading {

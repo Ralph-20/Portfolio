@@ -6,6 +6,7 @@ import About from '@/components/elem/About';
 
 export default function Home() {
   const HeroData = data.SectionData.Hero;
+  const AboutData = data.SectionData.About;
 
   return (
     <>
@@ -25,7 +26,8 @@ export default function Home() {
         secondaryHeadings={HeroData.secHeads}
         heroImg={HeroData.heroImg}
       />
-      <About />
+      <About {...AboutData} />
+      <div style={{ height: '1500px' }}></div>
     </>
   );
 }

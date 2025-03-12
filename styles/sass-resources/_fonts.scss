@@ -9,30 +9,36 @@ $fonts__font-weight--m: 500;
 $fonts__font-weight--mh: 600;
 $fonts__font-weight--h: 700;
 
+.plus-jakarta-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-optical-sizing: auto;
+}
+
 .font-fam-montserrat {
   font-family: 'Montserrat', sans-serif;
   font-optical-sizing: auto;
 }
 $fonts-montserrat: 'Montserrat', sans-serif;
+$fonts-jakarta: 'Plus Jakarta Sans', sans-serif;
 
 $fonts-nunito: 'Nunito Sans', sans-serif;
 
-$font-family__main: $fonts-montserrat;
+$font-family__main: $fonts-jakarta;
 
 @mixin fonts__h1 {
   font-family: $font-family__main;
   font-size: 8rem;
   font-style: normal;
   line-height: 120%;
-  font-weight: $fonts__font-weight--h;
+  font-weight: $fonts__font-weight--m;
 }
 
 @mixin fonts__h2 {
   font-family: $font-family__main;
-  font-size: 3rem;
+  font-size: 5rem;
   font-style: normal;
   line-height: 120%;
-  font-weight: $fonts__font-weight--xs;
+  font-weight: $fonts__font-weight--m;
 }
 @mixin fonts__h3 {
   font-family: $font-family__main;
@@ -54,7 +60,7 @@ $font-family__main: $fonts-montserrat;
   font-family: $font-family__main;
   font-size: 1.25rem;
   font-style: normal;
-  line-height: 120%;
+  line-height: 150%;
   font-weight: $fonts__font-weight--s;
 }
 
@@ -62,7 +68,7 @@ $font-family__main: $fonts-montserrat;
   font-family: $font-family__main;
   font-size: 0.85rem;
   @include respond-to(desktop) {
-    font-size: 0.75rem;
+    font-size: 1.15rem;
   }
   font-style: normal;
   line-height: 110%;

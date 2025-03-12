@@ -16,6 +16,7 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/elem/Hero3d/Hero3dAnim.js"],
   "exclude": ["node_modules"]
 }
+
