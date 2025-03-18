@@ -1,25 +1,26 @@
 @import './../../../styles/sass-resources/sass-resources.scss';
 
 .main {
-  height: 100vh;
-  position: relative;
-  background-color: $colors__background;
+  // min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // background-color: $colors__background;
 }
 
 .heading,
 .secondaryHead {
   @include fonts__h2;
 }
-
-.cta {
-  border: solid 1px white;
-  padding: 1rem;
-  border-radius: 50px;
+.secondaryHead {
+  color: var(--colors__neon-blue);
 }
 
 .heading-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .description {
@@ -58,6 +59,7 @@
 
 .image {
   object-fit: cover;
+  z-index: 1;
 }
 
 .image-container {

@@ -1,0 +1,30 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+.main {
+  border: 1px solid var(--colors__white);
+  border-radius: 40px;
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  @include transition(background-color 0.5s);
+  &:hover {
+    background-color: var(--colors__white);
+    .text {
+      color: $colors__ox-blue;
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.text {
+  padding: 1rem 2rem;
+  @include fonts__nav;
+  @include transition(color 0.75s, transform 0.5s);
+}
+
+.hidden-label {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+}

@@ -20,17 +20,29 @@
   align-items: center;
 }
 
+.test {
+  display: block;
+  margin-top: 1rem;
+}
+
+.cta {
+  // opacity: 0;
+  display: flex;
+}
+
 .heading {
   @include fonts__h1;
   letter-spacing: 5px;
   text-align: center;
   text-transform: uppercase;
+  opacity: 0;
 }
 
 .subheading {
   @include fonts__h4;
   text-transform: uppercase;
   word-spacing: 5px;
+  opacity: 0;
   // text-shadow: 2px 2px $colors__neon-red;
 }
 

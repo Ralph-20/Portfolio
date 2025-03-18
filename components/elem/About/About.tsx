@@ -5,6 +5,7 @@ import Image, { ImageProps } from 'next/image';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { gsap } from '@/utils/gsap';
+import CTA from '../CTA';
 
 export type AboutProps = {
   headline: string;
@@ -48,9 +49,7 @@ const About = (props: AboutProps): JSX.Element => {
               <Text field={secondaryHead} className={styles.secondaryHead} />
             </div>
             <Text field={description} className={styles.description} />
-            <a className={styles.cta} href="./">
-              TODO: Implement nice CTA, this one will be for Contact
-            </a>
+            <CTA className={styles.cta} label="More About Me" href={'#about'} />
           </div>
           <div className={styles['content-right']}>
             <div className={styles['image-container']} ref={imageContainerRef}>

@@ -4,6 +4,7 @@ import { TImageData } from '@/types';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { gsap, SplitText } from '@/utils/gsap';
+import CTA from '../CTA';
 
 export type HeroProps = {
   primaryHeading: string;
@@ -17,15 +18,18 @@ const Hero = (props: HeroProps): JSX.Element => {
   const { primaryHeading, secondaryHeadings, heroImg, eyebrow } = props || {};
 
   const containerRef = useRef<HTMLDivElement>(null);
-
+  const ctaRef = useRef<HTMLSpanElement>(null);
   const primaryTextRef = useRef<HTMLHeadingElement>(null);
   const secodaryTextRef = useRef<HTMLHeadingElement>(null);
 
   useGSAP(
     () => {
       const tl = gsap.timeline({});
-      const splitPrimary = new SplitText(primaryTextRef.current, { type: 'words' });
+      const splitPrimary = new SplitText(primaryTextRef.current, { type: 'words, chars' });
       const splitSecondary = new SplitText(secodaryTextRef.current, { type: 'words, chars' });
+
+      gsap.set(primaryTextRef.current, { opacity: 1 });
+      gsap.set(secodaryTextRef.current, { opacity: 1 });
 
       // Select the second and last word
       const words = splitSecondary.words;
@@ -37,15 +41,29 @@ const Hero = (props: HeroProps): JSX.Element => {
       }
 
       tl.fromTo(
-        splitPrimary.words,
-        { opacity: 0, y: 50, rotateY: 380 },
-        { delay: 0.5, opacity: 1, stagger: 0.5, y: 0, rotateY: 0, ease: 'power3', duration: 0.5 }
+        splitPrimary.chars,
+        { opacity: 0, y: -500, rotateY: 380 },
+        {
+          delay: 0.75,
+          opacity: 1,
+          stagger: 0.12,
+          y: 0,
+          rotateY: 0,
+          ease: 'power4.out',
+          duration: 1.5,
+        }
       );
 
       tl.fromTo(
         splitSecondary.chars,
         { opacity: 0, y: 50, rotateX: 380 },
         { opacity: 1, stagger: 0.05, y: 0, rotateX: 0, ease: 'power3', duration: 0.6 }
+      );
+
+      tl.fromTo(
+        ctaRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, ease: 'power3', duration: 2, delay: 0.5 }
       );
     },
     { dependencies: [], scope: containerRef }
@@ -63,6 +81,9 @@ const Hero = (props: HeroProps): JSX.Element => {
           </h2>
           {/* TODO: make the second word and last word turqoise using gsap */}
         </div>
+        <span className={styles['test']} ref={ctaRef}>
+          <CTA className={styles.cta} label="View More" href={'#about'} />
+        </span>
       </div>
     </div>
   );
