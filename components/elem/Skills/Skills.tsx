@@ -14,7 +14,7 @@ const Skills = (props: SkillsProps): JSX.Element => {
 
   return (
     <div className={cn(styles.main, 'spacer-L')}>
-      <div className="container-10">
+      <div className={cn('container-10', styles.wrapper)}>
         <Text field={heading} tag="h3" className={styles.heading} />
         <div className={styles['card-container']}>
           {cards?.map((card, index) => (
