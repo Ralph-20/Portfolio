@@ -20,7 +20,7 @@ const Hero = (props: HeroProps): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLSpanElement>(null);
   const primaryTextRef = useRef<HTMLHeadingElement>(null);
-  const secodaryTextRef = useRef<HTMLHeadingElement>(null);
+  const secodaryTextRef = useRef<HTMLParagraphElement>(null);
 
   useGSAP(
     () => {
@@ -72,13 +72,13 @@ const Hero = (props: HeroProps): JSX.Element => {
   return (
     <div className={cn(styles.main)} ref={containerRef}>
       <div className={styles['content-container']}>
-        <h1 ref={primaryTextRef} className={styles.heading}>
+        <h1 ref={primaryTextRef} aria-label={primaryHeading} className={styles.heading}>
           {primaryHeading}
         </h1>
         <div className={styles['secondary-headings']}>
-          <h2 ref={secodaryTextRef} className={styles.subheading}>
+          <p aria-label={eyebrow} ref={secodaryTextRef} className={styles.subheading}>
             {eyebrow}
-          </h2>
+          </p>
           {/* TODO: make the second word and last word turqoise using gsap */}
         </div>
         <span className={styles['test']} ref={ctaRef}>

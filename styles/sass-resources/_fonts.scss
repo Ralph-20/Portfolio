@@ -42,10 +42,10 @@ $font-family__main: $fonts-jakarta;
 }
 @mixin fonts__h3 {
   font-family: $font-family__main;
-  font-size: 1.75rem;
+  font-size: 3rem;
   font-style: normal;
   line-height: 100%;
-  font-weight: $fonts__font-weight--m;
+  font-weight: $fonts__font-weight--xs;
 }
 
 @mixin fonts__h4 {
@@ -53,10 +53,27 @@ $font-family__main: $fonts-jakarta;
   font-size: 1.5rem;
   font-style: normal;
   line-height: 100%;
-  font-weight: $fonts__font-weight--m;
+  font-weight: $fonts__font-weight--xs;
+}
+
+@mixin fonts__h5 {
+  font-family: $font-family__main;
+  font-size: 1.25rem;
+  font-style: normal;
+  line-height: 100%;
+  font-weight: $fonts__font-weight--xs;
 }
 
 @mixin fonts__p {
+  font-family: $font-family__main;
+  font-size: 1.25rem;
+  font-style: normal;
+  line-height: 150%;
+  font-weight: $fonts__font-weight--s;
+}
+
+@mixin fonts__eyebrow {
+  text-transform: uppercase;
   font-family: $font-family__main;
   font-size: 1.25rem;
   font-style: normal;

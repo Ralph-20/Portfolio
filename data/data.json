@@ -36,6 +36,77 @@
         "src": "/images/pfp.jpg",
         "alt": "Lucas Ralph in Chicago"
       }
+    },
+    "Expertise": {
+      "headline": "Experience",
+      "subHeadline": "My History",
+      "items": [
+        {
+          "title": "Associate Front End Software Dev",
+          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "link": "https://www.onenorth.com/",
+          "company": "One North",
+          "location": "Remote",
+          "period": "June 2023 - Present",
+          "icon": "/images/icons/react.svg"
+        },
+        {
+          "title": "Software Implementation Consult",
+          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "company": "Fast Enterprises",
+          "link": "https://www.fastenterprises.com/",
+          "location": "On Site",
+          "period": "Apr 2022 - Sep 2022",
+          "icon": "/images/icons/nodejs.svg"
+        },
+        {
+          "title": "Full Stack Engineer",
+          "description": "I have experience with DevOps practices, including CI/CD pipelines, containerization with Docker, and cloud services like AWS and Azure.",
+          "company": "LJR Dev",
+          "location": "My Home",
+          "period": "Apr 2020 - Current",
+          "link": "https://www.linkedin.com/in/lucas-ralph-995116207/",
+          "icon": "/images/icons/devops.svg"
+        }
+      ]
+    },
+    "Skills": {
+      "heading": "Skills",
+      "cards": [
+        {
+          "heading": "Associate Front End Software Dev",
+          "eyebrow": "Some Eyebrow",
+          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "link": "https://www.onenorth.com/",
+          "image": {
+            "src": "/images/pfp.jpg",
+            "alt": "Lucas Ralph in Chicago",
+            "fill": true
+          }
+        },
+        {
+          "heading": "Associate Front End Software Dev",
+          "eyebrow": "Some Eyebrow",
+          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "link": "https://www.onenorth.com/",
+          "image": {
+            "src": "/images/pfp.jpg",
+            "alt": "Lucas Ralph in Chicago",
+            "fill": true
+          }
+        },
+        {
+          "heading": "Associate Front End Software Dev",
+          "eyebrow": "Some Eyebrow",
+          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "link": "https://www.onenorth.com/",
+          "image": {
+            "src": "/images/pfp.jpg",
+            "alt": "Lucas Ralph in Chicago",
+            "fill": true
+          }
+        }
+      ]
     }
   }
 }

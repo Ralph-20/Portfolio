@@ -3,10 +3,14 @@ import Head from 'next/head';
 import data from '../data/data.json';
 import Hero3d from '@/components/elem/Hero3d';
 import About from '@/components/elem/About';
+import Expertise from '@/components/elem/Expertise';
+import Skills from '@/components/elem/Skills';
 
 export default function Home() {
   const HeroData = data.SectionData.Hero;
   const AboutData = data.SectionData.About;
+  const ExpertiseData = data.SectionData.Expertise;
+  const SkillsData = data.SectionData.Skills;
 
   return (
     <>
@@ -27,6 +31,12 @@ export default function Home() {
         heroImg={HeroData.heroImg}
       />
       <About {...AboutData} />
+      <Expertise
+        items={ExpertiseData.items}
+        headline={ExpertiseData.headline}
+        subHeadline={ExpertiseData.subHeadline}
+      />
+      <Skills {...SkillsData} />
       <div style={{ height: '1500px' }}></div>
     </>
   );

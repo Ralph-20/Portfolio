@@ -10,7 +10,7 @@ export type NavTabProps = {
 const NavTab = ({ tab }: NavTabProps): JSX.Element => {
   return (
     <Link href={tab.href} className={styles.link}>
-      <Text field={tab.label} className={styles.linkLabel} />
+      <Text tag="span" field={tab.label} className={styles.linkLabel} />
     </Link>
   );
 };

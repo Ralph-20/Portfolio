@@ -1,0 +1,122 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+.main {
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.heading {
+  @include fonts__h2;
+}
+
+.subhead {
+  @include fonts__h3;
+  font-size: 4rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-m);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  transition: color 0.75s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgba($color: $colors__white, $alpha: 0.5);
+  &:hover {
+    .label {
+      color: $colors__white;
+    }
+  }
+  &--right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  &--left {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  padding-block: var(--spacing-m);
+  border-bottom: solid 1px rgba($color: $colors__white, $alpha: 0.5);
+}
+
+.label {
+  @include fonts__h3;
+  @include transition(color 0.75s);
+  &--active {
+    color: $colors__accent;
+  }
+}
+
+.date,
+.location,
+.company,
+.description {
+  @include fonts__h4;
+}
+
+.desc-container {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+}
+
+.company,
+.description {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: transform 0.4s ease-in-out;
+}
+
+.company {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.description {
+  transform: translateY(100%);
+  z-index: 0;
+}
+
+.item:hover .company {
+  transform: translateY(-250%);
+}
+
+.item:hover .description {
+  transform: translateY(0%);
+}
+
+@include respond-to(tablet) {
+  .item {
+    gap: 1rem;
+    &--right {
+      align-items: flex-end;
+    }
+    &--left {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+  }
+}

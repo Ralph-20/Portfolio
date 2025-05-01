@@ -4,13 +4,15 @@
 //   border: 1px solid red;
 // }
 
-.linkLabel {
-  @include fonts__nav;
-  @include transition(color);
-}
-
 .link {
   &:hover {
-    color: $colors__neon-blue;
+    .linkLabel {
+      color: $colors__accent;
+    }
   }
+}
+
+.linkLabel {
+  @include fonts__nav;
+  // mix-blend-mode: difference;
 }

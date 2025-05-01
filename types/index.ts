@@ -7,3 +7,10 @@ export type Tlink = LinkProps & {
   label: string;
 };
 
+export type CardProps = {
+  heading: string;
+  eyebrow: string;
+  description: string;
+  image: TImageData;
+};
+

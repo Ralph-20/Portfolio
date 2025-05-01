@@ -1,0 +1,40 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+.main {
+  border: 1px solid $colors__white;
+  width: 100%;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 2.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    box-shadow: 10 10 20px var(--colors__neon-blue);
+  }
+}
+
+.heading {
+  @include fonts__h3;
+}
+
+.description {
+  @include fonts__p;
+}
+
+.eyebrow {
+  @include fonts__eyebrow;
+  color: var(--colors__neon-blue);
+}
+
+.img-container {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  max-width: 300px;
+  position: relative;
+  img {
+    object-fit: cover;
+    // object-position: center;
+  }
+}

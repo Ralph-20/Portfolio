@@ -1,0 +1,20 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+.main {
+  border: 1px solid red;
+}
+
+.heading {
+  @include fonts__h2;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-s);
+  @include respond-to(tablet) {
+    flex-direction: row;
+    gap: var(--spacing-m);
+  }
+}

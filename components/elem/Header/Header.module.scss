@@ -2,6 +2,17 @@
 
 .main {
   position: fixed;
+  &::after {
+    display: block;
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    content: '';
+    width: 100vw;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    z-index: -1;
+  }
   top: 0;
   left: 0;
   width: calc(100% - 4rem);
