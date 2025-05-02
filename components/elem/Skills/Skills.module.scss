@@ -1,7 +1,8 @@
 @import './../../../styles/sass-resources/sass-resources.scss';
 
 .main {
-  border: 1px solid red;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .heading {
