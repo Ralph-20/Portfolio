@@ -1,0 +1,13 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+.main {
+  border: 1px solid red;
+}
+
+.heading {
+  @include fonts__h2;
+}
+
+.subHeading {
+  @include fonts__h3;
+}

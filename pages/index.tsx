@@ -5,12 +5,16 @@ import Hero3d from '@/components/elem/Hero3d';
 import About from '@/components/elem/About';
 import Expertise from '@/components/elem/Expertise';
 import Skills from '@/components/elem/Skills';
+import PictureSection from '@/components/elem/PictureSection';
+import ContactSection from '@/components/elem/ContactSection';
 
 export default function Home() {
   const HeroData = data.SectionData.Hero;
   const AboutData = data.SectionData.About;
   const ExpertiseData = data.SectionData.Expertise;
   const SkillsData = data.SectionData.Skills;
+  const ContactData = data.SectionData.ContactSection;
+  const PictureData = data.SectionData.PictureSection;
 
   return (
     <>
@@ -31,12 +35,14 @@ export default function Home() {
         heroImg={HeroData.heroImg}
       />
       <About {...AboutData} />
+      <PictureSection {...PictureData} />
       <Expertise
         items={ExpertiseData.items}
         headline={ExpertiseData.headline}
         subHeadline={ExpertiseData.subHeadline}
       />
       <Skills {...SkillsData} />
+      <ContactSection {...ContactData} />
       <div style={{ height: '1500px' }}></div>
     </>
   );

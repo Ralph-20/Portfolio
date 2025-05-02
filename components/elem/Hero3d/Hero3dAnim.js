@@ -5,6 +5,8 @@ function MyThree() {
   const refContainer = useRef(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     // Initialize scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
