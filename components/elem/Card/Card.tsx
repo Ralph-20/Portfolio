@@ -34,10 +34,10 @@ const Card = (props: CardProps): JSX.Element => {
         // background.style.transform = `translate(calc(${parallaxX}px - 50%), calc(${parallaxY}px - 50%))`;
 
         // Card transform
-        const rotateX = -((y - centerY) / rect.height) * 15;
-        const rotateY = ((x - centerX) / rect.width) * 15;
-        const translateX = ((x - centerX) / rect.width) * 1.5;
-        const translateY = ((y - centerY) / rect.height) * 1.5;
+        const rotateX = -((y - centerY) / rect.height) * 20;
+        const rotateY = ((x - centerX) / rect.width) * 20;
+        const translateX = ((x - centerX) / rect.width) * 2;
+        const translateY = ((y - centerY) / rect.height) * 2;
 
         gsap.to(container, {
           transform: `translate3d(${translateX}%, ${translateY}%, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
@@ -58,6 +58,7 @@ const Card = (props: CardProps): JSX.Element => {
           opacity,
           scale,
           duration: 0.25,
+          ease: 'power2.out',
         });
       };
 

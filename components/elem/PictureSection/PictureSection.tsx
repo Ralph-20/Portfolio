@@ -23,8 +23,10 @@ const PictureSection = (props: PictureSectionProps): JSX.Element => {
           <div key={index} className={styles['picture-container']}>
             <div className={styles['image-container']}>
               <Image {...picture.image} className={styles.image} />
+              <div className={styles['image-overlay']}>
+                <Text field={picture.description} tag="p" className={styles['image-desc']} />
+              </div>
             </div>
-            <Text field={picture.description} tag="p" className={styles['image-desc']} />
           </div>
         ))}
       </div>
