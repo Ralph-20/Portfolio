@@ -35,13 +35,13 @@ export default function Home() {
         heroImg={HeroData.heroImg}
       />
       <About {...AboutData} />
-      <PictureSection {...PictureData} />
       <Expertise
         items={ExpertiseData.items}
         headline={ExpertiseData.headline}
         subHeadline={ExpertiseData.subHeadline}
       />
       <Skills {...SkillsData} />
+      <PictureSection {...PictureData} />
       <ContactSection {...ContactData} />
       <div style={{ height: '1500px' }}></div>
     </>

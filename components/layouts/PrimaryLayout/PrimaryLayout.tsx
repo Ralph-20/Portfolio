@@ -3,6 +3,7 @@ import styles from './PrimaryLayout.module.scss';
 import React from 'react';
 import Header from '@/components/elem/Header';
 import data from '@/data/data.json';
+import Cursor from '@/components/elem/Cursor';
 
 export type PrimaryLayoutProps = {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ const PrimaryLayout: React.FC<PrimaryLayoutProps> = ({ children }) => {
 
   return (
     <div className={cn(styles.main)}>
+      <Cursor />
       <Header tabs={HeaderData.tabs} />
       {children}
     </div>

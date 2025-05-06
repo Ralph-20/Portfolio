@@ -1,0 +1,30 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: $colors__neon-red;
+  mix-blend-mode: difference;
+  border-radius: 100%;
+  // border: solid 2px white;
+
+  // cool moon effect:
+  // width: 25px;
+  // height: 25px;
+  // border-radius: 100%;
+  // box-shadow: 2px 2px 2px $colors__white;
+
+  opacity: 0;
+}
+
+@media (pointer: fine) {
+  /* Rules for devices with mouse here */
+  .cursor {
+    opacity: 1;
+  }
+}
