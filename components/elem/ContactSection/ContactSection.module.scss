@@ -1,7 +1,9 @@
 @import './../../../styles/sass-resources/sass-resources.scss';
 
 .main {
-  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .heading {
@@ -10,4 +12,16 @@
 
 .subHeading {
   @include fonts__h3;
+}
+
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }

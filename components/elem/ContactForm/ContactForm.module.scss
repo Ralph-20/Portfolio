@@ -1,0 +1,70 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+.main {
+}
+
+.contact {
+  padding: 2rem;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  color: $colors__neon-blue;
+  font-size: 0.95rem;
+  font-weight: 500;
+  @include fonts__p;
+}
+
+.input,
+.text-area {
+  background-color: rgba($colors__white, 0.05); // translucent overlay
+  border: 1px solid rgba($colors__white, 0.2);
+  color: $colors__white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  @include fonts__p;
+
+  &:focus {
+    outline: none;
+    border-color: $colors__accent;
+    box-shadow: 4px 4px 8px rgba($colors__accent, 0.4);
+  }
+
+  &::placeholder {
+    color: rgba($colors__white, 0.4);
+  }
+}
+
+.text-area {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.error {
+  color: $colors__neon-red;
+  font-size: 0.85rem;
+  @include fonts__p;
+}
+
+.button {
+  align-self: flex-start;
+}

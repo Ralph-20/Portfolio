@@ -4,35 +4,63 @@ import { Tlink } from '@/types';
 import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-// import { useGsapTimeline } from '@/hooks/useGSAPTimeline';
 
-// TODO: create anchor or link util component, extend that here instead of simply a link
-export type CTAProps = Tlink & {
+export type CTAProps = Partial<Tlink> & {
   className?: string;
-  children?: React.ReactNode; // Added children prop to allow for additional content
-  ref?: React.Ref<HTMLAnchorElement>; // Added ref prop for forwarding refs if needed
+  children?: React.ReactNode;
+  type?: 'button' | 'submit' | 'reset'; // for <button>
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  as?: 'link' | 'button'; // force element type
 };
 
 const CTA = (props: CTAProps): JSX.Element => {
-  const { ref, label, href, className, children } = props || {};
+  const {
+    label,
+    href,
+    className,
+    children,
+    type = 'button',
+    onClick,
+    as = href ? 'link' : 'button',
+  } = props;
 
-  const containerRef = useRef<HTMLAnchorElement>(null);
+  const containerRef = useRef<HTMLAnchorElement & HTMLButtonElement & HTMLDivElement>(null);
 
-  // const { addToTimeline, masterTimeline } = useGsapTimeline();
+  useGSAP(() => {}, { scope: containerRef });
 
-  useGSAP(
-    () => {
-      return;
-    },
-    { scope: containerRef }
-  );
-
-  return (
-    <Link ref={containerRef} href={href} className={cn(styles.main, className)}>
+  const content = (
+    <>
       <span className={styles.text}>{label}</span>
       {children}
       <span className={cn(styles['hidden-label'], styles.text)}>{label}</span>
-    </Link>
+    </>
+  );
+
+  if (as === 'button') {
+    return (
+      <button
+        ref={containerRef}
+        type={type}
+        onClick={onClick}
+        className={cn(styles.main, className)}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  if (as === 'link' && href) {
+    return (
+      <Link ref={containerRef} href={href} className={cn(styles.main, className)}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <div ref={containerRef} className={cn(styles.main, className)}>
+      {content}
+    </div>
   );
 };
 
