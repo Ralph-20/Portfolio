@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
-import { NavigationOptions, PaginationOptions } from 'swiper/types';
+import { NavigationOptions } from 'swiper/types';
 
 import Chevron from '../../../assets/svg/chevron.svg';
 

@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import CTA from '../CTA';
+import { toast } from 'react-hot-toast';
 
 export type ContactFormProps = {};
 
@@ -38,6 +39,8 @@ const ContactForm = (_props: ContactFormProps): JSX.Element => {
   });
 
   const onSubmit: SubmitHandler<TFormInput> = async (formData) => {
+    const { name = 'friend' } = formData;
+
     try {
       const response = await fetch('/api/send', {
         method: 'POST',
@@ -52,7 +55,8 @@ const ContactForm = (_props: ContactFormProps): JSX.Element => {
       }
 
       const responseData = await response.json();
-      console.log('Success:', responseData); // replace with toast if needed
+      // console.log('Success:', responseData); // replace with toast if needed
+      toast.success(`Hey ${name}, your message sent successfully!`);
       reset();
     } catch (err) {
       console.error('Submission failed:', err);

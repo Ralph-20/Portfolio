@@ -7,6 +7,7 @@ import Expertise from '@/components/elem/Expertise';
 import Skills from '@/components/elem/Skills';
 import PictureSection from '@/components/elem/PictureSection';
 import ContactSection from '@/components/elem/ContactSection';
+import { Toaster } from 'react-hot-toast';
 
 export default function Home() {
   const HeroData = data.SectionData.Hero;
@@ -43,7 +44,7 @@ export default function Home() {
       <Skills {...SkillsData} />
       <PictureSection {...PictureData} />
       <ContactSection {...ContactData} />
-      <div style={{ height: '1500px' }}></div>
+      <Toaster position="top-center" toastOptions={{ duration: 5000 }} />
     </>
   );
 }
