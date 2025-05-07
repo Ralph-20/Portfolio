@@ -8,11 +8,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { name, email, phone, message } = req.body;
     const data = await resend.emails.send({
-      // TODO: change this
-      //   from: 'LJR DEV <lucasjamesralph@gmail.com>',
-      from: 'onboarding@resend.dev', // valid for dev/testing
+      from: 'Portfolio@ljrdev.com',
       to: ['lucasjamesralph@gmail.com'],
-      subject: 'New Message from Portfolio Website',
+      subject: 'New Message from Portfolio / LJR dev Website',
       text: message,
       react: EmailTemplate({ name, email, phone, message }),
     });
