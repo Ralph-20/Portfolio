@@ -21,19 +21,21 @@ const About = (props: AboutProps): JSX.Element => {
 
   useGSAP(
     () => {
+      const isMobile = window && window.matchMedia('(max-width: 767px)').matches;
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top center',
-          end: 'center center',
-          scrub: 5,
+          start: isMobile ? '-=500' : 'top center',
+          end: isMobile ? 'top top' : 'center center',
+          scrub: isMobile ? false : 5,
         },
       });
 
       tl.fromTo(
         imageContainerRef.current,
         { opacity: 0, yPercent: 100 },
-        { opacity: 1, yPercent: 0 }
+        { opacity: 1, yPercent: 0, duration: 2 }
       );
     },
     { dependencies: [], scope: containerRef }

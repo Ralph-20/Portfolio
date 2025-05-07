@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import styles from './Skills.module.scss';
-import { TImageData, CardProps } from '@/types';
+import { CardProps } from '@/types';
 import Text from '@/components/helpers/Text';
 import Card from '../Card';
 import 'swiper/css';
@@ -9,6 +9,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y, EffectCoverflow } from 'swiper/modules';
+import { useRef } from 'react';
+import Chevron from '../../../assets/svg/chevron.svg';
+import { NavigationOptions } from 'swiper/types';
 
 export type SkillsProps = {
   heading: string;
@@ -17,6 +20,8 @@ export type SkillsProps = {
 
 const Skills = (props: SkillsProps): JSX.Element => {
   const { heading, cards } = props || {};
+  const prevRef = useRef<HTMLDivElement | null>(null);
+  const nextRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div className={cn(styles.main, 'spacer-L')}>
@@ -29,21 +34,20 @@ const Skills = (props: SkillsProps): JSX.Element => {
           initialSlide={1}
           coverflowEffect={{
             rotate: 30,
-            stretch: 15,
-            depth: 50,
+            stretch: 0,
+            depth: 10,
+            scale: 0.9,
             modifier: 1,
             slideShadows: false,
           }}
-          // navigation={{
-          //   prevEl: prevRef.current,
-          //   nextEl: nextRef.current,
-          // }}
-          // onBeforeInit={(swiper) => {
-          //   swiper.params.navigation = {
-          //     prevEl: prevRef.current,
-          //     nextEl: nextRef.current,
-          //   };
-          // }}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            (swiper.params.navigation as NavigationOptions).prevEl = prevRef.current;
+            (swiper.params.navigation as NavigationOptions).nextEl = nextRef.current;
+          }}
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -52,7 +56,7 @@ const Skills = (props: SkillsProps): JSX.Element => {
               slidesPerView: 2,
             },
           }}
-          spaceBetween={120}
+          spaceBetween={75}
           className={styles.swiper}
         >
           {cards?.map((card, index) => (
@@ -65,6 +69,12 @@ const Skills = (props: SkillsProps): JSX.Element => {
               />
             </SwiperSlide>
           ))}
+          <div ref={prevRef} className={styles['swiper-button-prev-custom']}>
+            <Chevron className={styles.arrow} />
+          </div>
+          <div ref={nextRef} className={styles['swiper-button-next-custom']}>
+            <Chevron className={cn(styles.arrow, styles.arrowRight)} />
+          </div>
         </Swiper>
       </div>
     </div>

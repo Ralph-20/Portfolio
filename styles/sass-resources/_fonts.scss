@@ -27,25 +27,34 @@ $font-family__main: $fonts-jakarta;
 
 @mixin fonts__h1 {
   font-family: $font-family__main;
-  font-size: 8rem;
+  font-size: 4rem;
   font-style: normal;
   line-height: 120%;
   font-weight: $fonts__font-weight--m;
+  @include respond-to(desktop) {
+    font-size: 8rem;
+  }
 }
 
 @mixin fonts__h2 {
   font-family: $font-family__main;
-  font-size: 5rem;
+  font-size: 3rem;
   font-style: normal;
   line-height: 120%;
   font-weight: $fonts__font-weight--m;
+  @include respond-to(desktop) {
+    font-size: 5rem;
+  }
 }
 @mixin fonts__h3 {
   font-family: $font-family__main;
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-style: normal;
   line-height: 100%;
   font-weight: $fonts__font-weight--xs;
+  @include respond-to(desktop) {
+    font-size: 3rem;
+  }
 }
 
 @mixin fonts__h4 {

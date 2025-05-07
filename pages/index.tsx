@@ -36,12 +36,12 @@ export default function Home() {
         heroImg={HeroData.heroImg}
       />
       <About {...AboutData} />
+      <Skills {...SkillsData} />
       <Expertise
         items={ExpertiseData.items}
         headline={ExpertiseData.headline}
         subHeadline={ExpertiseData.subHeadline}
       />
-      <Skills {...SkillsData} />
       <PictureSection {...PictureData} />
       <ContactSection {...ContactData} />
       <Toaster position="top-center" toastOptions={{ duration: 5000 }} />

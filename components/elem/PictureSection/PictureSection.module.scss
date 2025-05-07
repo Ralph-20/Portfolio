@@ -16,7 +16,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-m);
+  gap: 3rem;
 }
 
 .pictures-container {
@@ -49,7 +49,10 @@
   align-items: center;
   width: 50px;
   height: 50px;
-  bottom: -100px;
+  bottom: -70px;
+  @include respond-to(tablet) {
+    bottom: -100px;
+  }
   transform: translateY(-50%);
   font-size: 3rem;
   z-index: 100;
@@ -71,11 +74,11 @@
 }
 
 .swiper-button-prev-custom {
-  left: calc(50% - 2rem);
+  left: calc(50% - 3rem);
 }
 
 .swiper-button-next-custom {
-  left: calc(50% + 2rem);
+  left: calc(50% + 1rem);
 }
 
 .arrowRight {
