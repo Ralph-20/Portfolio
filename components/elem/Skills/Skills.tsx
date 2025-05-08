@@ -31,6 +31,7 @@ const Skills = (props: SkillsProps): JSX.Element => {
           <Swiper
             modules={[Navigation, Pagination, A11y, EffectCoverflow]}
             effect="coverflow"
+            loop={true}
             centeredSlides={true}
             initialSlide={1}
             coverflowEffect={{

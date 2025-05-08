@@ -37,6 +37,7 @@ const PictureSection = (props: PictureSectionProps): JSX.Element => {
             modules={[Navigation, Pagination, A11y, EffectCoverflow]}
             effect={'coverflow'}
             centeredSlides={true}
+            loop={true}
             initialSlide={1}
             coverflowEffect={{
               rotate: 50,

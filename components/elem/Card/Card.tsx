@@ -11,9 +11,12 @@ const Card = (props: CardProps): JSX.Element => {
   const { heading, eyebrow, description, image } = props || {};
   const containerRef = useRef<HTMLDivElement>(null);
   const shineRef = useRef<HTMLDivElement>(null);
+  const isTouchDevice =
+    typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
   useGSAP(
     () => {
+      if (isTouchDevice) return;
       const container = containerRef.current;
       const shine = shineRef.current;
 
