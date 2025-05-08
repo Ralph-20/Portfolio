@@ -14,7 +14,7 @@
   }
 
   &:hover img {
-    filter: brightness(0.6);
+    filter: brightness(0.5);
     transform: scale(1.02);
   }
 }
@@ -42,7 +42,6 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
   padding: 1rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
   color: $colors__white;

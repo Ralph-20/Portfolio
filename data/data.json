@@ -39,10 +39,10 @@
     },
     "Expertise": {
       "headline": "Experience",
-      "subHeadline": "My History",
+      "subHeadline": "Work History",
       "items": [
         {
-          "title": "Associate Front End Software Dev",
+          "title": "Associate Front End Software Developer",
           "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "link": "https://www.onenorth.com/",
           "company": "One North",
@@ -53,15 +53,16 @@
         {
           "title": "Software Implementation Consult",
           "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "company": "Fast Enterprises",
+          "company": "FAST Enterprises",
           "link": "https://www.fastenterprises.com/",
           "location": "On Site",
           "period": "Apr 2022 - Sep 2022",
           "icon": "/images/icons/nodejs.svg"
         },
         {
-          "title": "Full Stack Engineer",
-          "description": "I have experience with DevOps practices, including CI/CD pipelines, containerization with Docker, and cloud services like AWS and Azure.",
+          "title": "Architect / Full Stack Engineer",
+          "description": "LJR Dev is a modern web development studio focused on crafting high-performance, visually polished websites and applications. Specializations in web applications with CMS integrations.",
+          "descriptionLong": "LJR Dev is a modern web development studio focused on crafting high-performance, visually polished websites and applications. Specializations in web applications with CMS integrations and scalabale APIs. Whether it's building from scratch or optimizing existing platforms, we deliver clean, maintainable code with attention to detail. With history in helping out Minnesota ran local businesses, to startups and enterprise clients, we bring ideas to life through smart, efficient development.",
           "company": "LJR Dev",
           "location": "My Home",
           "period": "Apr 2020 - Current",
@@ -71,73 +72,169 @@
       ]
     },
     "Skills": {
-      "heading": "Skills",
+      "heading": "My Skills",
       "cards": [
         {
-          "heading": "Associate Front End Software Dev",
-          "eyebrow": "GSAP / animation",
-          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "link": "https://www.onenorth.com/",
+          "heading": "GSAP / Framer / Swiper Animations",
+          "eyebrow": "Skilled with JavaScript Animation Libraries",
+          "description": "Expert in creating seamless animations with GSAP, from scroll-triggered effects to complex timelines. Used to enhance interactivity and visual polish across modern websites. I have used ",
+          "link": "https://greensock.com/gsap/",
           "image": {
-            "src": "/images/pfp.jpg",
-            "alt": "Lucas Ralph in Chicago",
+            "src": "/images/skills/gsap.png",
+            "alt": "GSAP logo with animated effects",
             "fill": true
           }
         },
         {
-          "heading": "Associate Front End Software Dev",
-          "eyebrow": "NextJS",
-          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "link": "https://www.onenorth.com/",
+          "heading": "Next.js / React / Vue",
+          "eyebrow": "Modern Frontend Frameworks",
+          "description": "Skilled in building fast, dynamic applications with Next.js, Vue, and React. At my current agency, One North, I get a broad mix between all the modern frameworks. I use this knowledge to stay on top of best practices, and develop scalable interfaces with clean component logic and state management.",
+          "link": "https://nextjs.org/",
           "image": {
-            "src": "/images/pfp.jpg",
-            "alt": "Lucas Ralph in Chicago",
+            "src": "/images/skills/nextjs.png",
+            "alt": "React, Vue, and Next.js logos",
             "fill": true
           }
         },
         {
-          "heading": "Associate Front End Software Dev",
-          "eyebrow": "Some Eyebrow",
-          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          "link": "https://www.onenorth.com/",
+          "heading": "HTML5 Semantics",
+          "eyebrow": "Web Fundamentals",
+          "description": "Write clean, accessible, and semantic HTML5 markup. My approach focuses on performance, SEO readiness, and cross-browser compatibility from the ground up.",
+          "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
           "image": {
-            "src": "/images/pfp.jpg",
-            "alt": "Lucas Ralph in Chicago",
+            "src": "/images/skills/html.png",
+            "alt": "HTML5 logo",
+            "fill": true
+          }
+        },
+        {
+          "heading": "Web Accessibility (A11Y)",
+          "eyebrow": "Inclusive Development",
+          "description": "Build accessible experiences with WCAG and ARIA best practices. Things important to look out for may involve keyboard navigation, screen reader support, and contrast to meet AA/AAA standards.",
+          "link": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+          "image": {
+            "src": "/images/skills/a11y.png",
+            "alt": "Web accessibility icons",
+            "fill": true
+          }
+        },
+        {
+          "heading": "Lighthouse & PSI",
+          "eyebrow": "PageSpeed Insights",
+          "description": "Regularly audit and optimize for Lighthouse scores: performance, SEO, accessibility, and best practices. Comfortable reading and resolving PSI reports efficiently. Things like robot.txt, sitemap.xml, and image optimization are all things I look for when auditing a site.",
+
+          "link": "https://pagespeed.web.dev/",
+          "image": {
+            "src": "/images/skills/lighthouse.webp",
+            "alt": "Lighthouse audit report preview",
+            "fill": true
+          }
+        },
+        {
+          "heading": "Figma & UX",
+          "eyebrow": "Design System Collaboration",
+          "description": "At One North (partnered with Figma), I work closely with designers and UX'rs in Figma on a daily basis through our workflow. I've had the opprotunity to work on and expand on their SDS (simple design system), and expanded it into a monorepo DS leveraging Figma Code Connect and web componentry. Suffice to say, I know my way around Figma.",
+          "link": "https://www.figma.com/",
+          "image": {
+            "src": "/images/skills/figma.webp",
+            "alt": "Figma interface showing a UI layout",
+            "fill": true
+          }
+        },
+        {
+          "heading": "JavaScript",
+          "eyebrow": "Core Web Language",
+          "description": "Proficient in JavaScript across both browser and Node.js. I write modular, modern ES6+ code with an emphasis on readability, reusability, and performance. If you can master true JS fundamentals, you can master any framework / animation / task at hand.",
+          "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+          "image": {
+            "src": "/images/skills/js.webp",
+            "alt": "JavaScript logo and code snippet",
+            "fill": true
+          }
+        },
+        {
+          "heading": "Embedded Systems",
+          "eyebrow": "Raspberry Pi, GPIO, Python",
+          "description": "Build small-scale systems with Raspberry Pi and microcontrollers ~ at times hosting web apps to interface with devices on. Familiar with GPIO pin logic, Python scripting, and basic hardware integration.",
+          "link": "https://www.raspberrypi.com/",
+          "image": {
+            "src": "/images/skills/embedded.png",
+            "alt": "Raspberry Pi board and GPIO pins",
             "fill": true
           }
         }
       ]
     },
     "ContactSection": {
-      "heading": "Contact",
-      "subHeading": "Get in touch"
+      "heading": "Contact Me",
+      "subHeading": "Lets Get in Touch"
     },
     "PictureSection": {
       "heading": "My Photo Gallery",
       "pictures": [
         {
           "image": {
-            "src": "/images/pfp.jpg",
+            "src": "/images/album/Chicago.jpeg",
             "alt": "Lucas Ralph in Chicago",
             "fill": true
           },
-          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "description": "Although I work remote, I do get the chance to travel to Chicago every so often, and when I do ~ I capitalize on that opportunity! I love walking around the city, and the pizza is amazing. The last time I went, I got the change to check out the Chicago museum of science and industry and walk along the board walk, already can't wait for next time ...."
         },
         {
           "image": {
-            "src": "/images/pfp.jpg",
-            "alt": "Lucas Ralph in Chicago",
+            "src": "/images/album/HomeGym.jpeg",
+            "alt": "Home Gym",
             "fill": true
           },
-          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "description": "This picture captures a couple of my favorite hobbies ~ staying active, and building things. I’ve been passionate about staying active ever since I was a kid, and weightlifting has been a big part of my life since high school. Recently, I converted my backyard shed into a home gym ~ so now everything I need is just a few steps away. This project also ties into my love for building things ~ from websites and microcontrollers, to a full-on gym, I enjoy seeing ideas from start to finish, and learning everything I can along the way!"
         },
         {
           "image": {
-            "src": "/images/pfp.jpg",
-            "alt": "Lucas Ralph in Chicago",
+            "src": "/images/album/Milo.jpeg",
+            "alt": "My cat Milo! I've had milo for about 5 years now, and he's my little developer buddy. He likes to hang out with me in my office while I work, and generally is pretty skilled at making sleep look so good ...",
             "fill": true
           },
-          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "description": "My cat Milo! I've had milo for about 5 years now, and he's my little developer buddy. He likes to hang out with me in my office while I work, and generally is pretty skilled at making sleep look so good ..."
+        },
+        {
+          "image": {
+            "src": "/images/album/StateFair.jpeg",
+            "alt": "State Fair",
+            "fill": true
+          },
+          "description": "The state fair! I love going to the state fair every year, and this year was no exception. I tried all the classic foods, from cheese curds and corn on the cob, to a paddle flight of castle danger. However my favorite / most intriguing part from this past year would have to be the Mini Donut beer. If you haven't been to the MN state fair before, I highly recommend it!"
+        },
+        {
+          "image": {
+            "src": "/images/album/Lou.jpeg",
+            "alt": "My Cat Lou!",
+            "fill": true
+          },
+          "description": "The newest addition to my family, Lou!"
+        },
+        {
+          "image": {
+            "src": "/images/album/embedded.jpeg",
+            "alt": "Embedded Systems",
+            "fill": true
+          },
+          "description": "A fun embedded systems project! I worked on with a Raspberry Pi and some GPIO pins to create a microcontroller for some I/O at a bar in the Minneapolis up town area. The device would play a specified song on button input, and self hosted a website that allowed a user on the same network to upload their own audio files to change out which sound clip each button would play."
+        },
+        {
+          "image": {
+            "src": "/images/album/Ireland.jpeg",
+            "alt": "Ireland",
+            "fill": true
+          },
+          "description": "In my free time, I love to travel! One of the prettiest places I've ever visited was Ireland ~ another place I highly recommend visiting. "
+        },
+        {
+          "image": {
+            "src": "/images/album/UK.jpeg",
+            "alt": "York, England",
+            "fill": true
+          },
+          "description": "A fun fact about me is that I'm half English! I was born in the U.S., but my dad is from England, which is where that entire half of my family still lives (Grandmother and Grandfather in the pic above). It's hard living so far away from people I love so much, but it does make for a good excuse to have another trip back across the pond to see them, and visit England once more ~ which is always welcomed! :)"
         }
       ]
     }
