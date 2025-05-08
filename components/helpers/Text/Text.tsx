@@ -13,13 +13,7 @@ const Text = forwardRef<HTMLElement, TextProps>(function BaseHelpersText(
 ): JSX.Element {
   const { field, tag = 'div', className } = props || {};
   if (field) {
-    return createElement(tag, {
-      className,
-      ref: ref,
-      dangerouslySetInnerHTML: {
-        __html: field,
-      },
-    });
+    return createElement(tag, { className, ref }, field);
   }
   return <></>;
 });

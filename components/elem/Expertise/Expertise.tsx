@@ -2,6 +2,8 @@ import cn from 'classnames';
 import styles from './Expertise.module.scss';
 import Text from '@/components/helpers/Text';
 import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import { gsap, SplitText } from '@/utils/gsap';
 
 export type ExpertiseProps = {
   headline: string;
@@ -20,7 +22,56 @@ const Expertise = (props: ExpertiseProps): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { headline, subHeadline, items } = props || {};
 
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const subHeadingRef = useRef<HTMLHeadingElement>(null);
+
   // TODO: add fade up animation similar to button hover, and add in description in a similar hover state manner
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 90%',
+          end: 'top bottom',
+          toggleActions: 'restart none none reset',
+          once: false,
+        },
+      });
+      const splitPrimary = new SplitText(headingRef.current, { type: 'chars, words, lines' });
+      const splitSecondary = new SplitText(subHeadingRef.current, { type: 'chars, words, lines' });
+      const items = gsap.utils.toArray(`.${styles.item}`); // safer than targeting <li> directly
+
+      gsap.set(items, { opacity: 0, y: 50 });
+      gsap.set(splitPrimary.chars, {
+        y: 150,
+      });
+      gsap.set(splitSecondary.chars, {
+        y: 150,
+      });
+
+      tl.to(splitPrimary.chars, {
+        delay: 0.25,
+        y: 0,
+        stagger: 0.03,
+        duration: 0.25,
+      });
+      tl.to(splitSecondary.chars, {
+        y: 0,
+        stagger: 0.03,
+        duration: 0.25,
+      });
+
+      tl.to(items, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.15,
+        duration: 1.5,
+        ease: 'power2.out',
+      });
+    },
+    { dependencies: [], scope: containerRef }
+  );
 
   return (
     <section id="experience">
@@ -28,8 +79,10 @@ const Expertise = (props: ExpertiseProps): JSX.Element => {
         <div className={cn('container-10', styles.wrapper)}>
           <div className={styles.container}>
             <div className={styles['header-container']}>
-              <Text field={headline} tag="h3" className={styles.heading} />
-              {subHeadline && <Text field={subHeadline} className={styles.subhead} />}
+              <Text field={headline} ref={headingRef} tag="h3" className={styles.heading} />
+              {subHeadline && (
+                <Text field={subHeadline} className={styles.subhead} ref={subHeadingRef} />
+              )}
             </div>
             <ul className={styles.list}>
               {items?.map((item, index) => (

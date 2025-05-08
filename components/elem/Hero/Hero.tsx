@@ -30,7 +30,9 @@ const Hero = (props: HeroProps): JSX.Element => {
 
       gsap.set(primaryTextRef.current, { opacity: 1 });
       gsap.set(secodaryTextRef.current, { opacity: 1 });
-
+      gsap.set(ctaRef.current, { opacity: 1 });
+      gsap.set(splitPrimary.chars, { opacity: 0, y: -500, rotateY: 380 });
+      gsap.set(splitSecondary.chars, { opacity: 0, y: 50, rotateX: 380 });
       // Select the second and last word
       const words = splitSecondary.words;
       if (words.length > 1) {
@@ -40,30 +42,29 @@ const Hero = (props: HeroProps): JSX.Element => {
         tl.set(words[words.length - 1], { color: 'var(--colors__neon-blue)' }); // Last word
       }
 
-      tl.fromTo(
-        splitPrimary.chars,
-        { opacity: 0, y: -500, rotateY: 380 },
-        {
-          delay: 0.75,
-          opacity: 1,
-          stagger: 0.12,
-          y: 0,
-          rotateY: 0,
-          ease: 'power4.out',
-          duration: 1.5,
-        }
-      );
+      tl.to(splitPrimary.chars, {
+        delay: 0.5,
+        opacity: 1,
+        stagger: 0.12,
+        y: 0,
+        rotateY: 0,
+        ease: 'power4.out',
+        duration: 1.5,
+      });
 
-      tl.fromTo(
-        splitSecondary.chars,
-        { opacity: 0, y: 50, rotateX: 380 },
-        { opacity: 1, stagger: 0.05, y: 0, rotateX: 0, ease: 'power3', duration: 0.6 }
-      );
+      tl.to(splitSecondary.chars, {
+        opacity: 1,
+        stagger: 0.05,
+        y: 0,
+        rotateX: 0,
+        ease: 'power3',
+        duration: 0.6,
+      });
 
       tl.fromTo(
         ctaRef.current,
         { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, ease: 'power3', duration: 2, delay: 0.5 }
+        { opacity: 1, y: 0, ease: 'power3', duration: 2 }
       );
     },
     { dependencies: [], scope: containerRef }

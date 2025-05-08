@@ -11,6 +11,8 @@
 
 .heading {
   @include fonts__h2;
+  position: relative;
+  overflow: hidden;
 }
 
 .wrapper {

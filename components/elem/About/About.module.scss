@@ -13,6 +13,8 @@
 .heading,
 .secondaryHead {
   @include fonts__h2;
+  position: relative;
+  overflow: hidden;
 }
 .secondaryHead {
   color: var(--colors__neon-blue);

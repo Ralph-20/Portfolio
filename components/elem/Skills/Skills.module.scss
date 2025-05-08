@@ -11,6 +11,9 @@
 
 .heading {
   @include fonts__h2;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .card-container {
@@ -40,6 +43,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
   }
 }
 

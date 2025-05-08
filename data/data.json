@@ -33,7 +33,7 @@
       }
     },
     "About": {
-      "headline": "About",
+      "headline": "About Me",
       "secondaryHead": "Me",
       "description": "Heyo! My name is Lucas Ralph, and I'm a full-stack software engineer specializing in front end development. I'm based out of Mound, Minnesota (surrounded by the purified waters of Lake Minnetonka). I'm a proud graduate of the University of Minnesota, and a lover of the 4 seasons (hence why I never left!). In my free time, I enjoy weight lifting, playing video games, making little Arduino / Raspberry Pi projects, and - as of late - gardening and learning about plants!",
       "image": {
