@@ -75,6 +75,9 @@
 
 .description {
   @include fonts__p;
+  color: $colors__white;
+  position: relative;
+  z-index: 3;
 }
 
 .eyebrow {
@@ -89,7 +92,10 @@
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
-  max-width: 300px;
+  max-width: 170px;
+  @include respond-to(tablet) {
+    max-width: 300px;
+  }
   position: relative;
   img {
     @include transition(transform 0.6s ease);

@@ -11,6 +11,8 @@ export type CTAProps = Partial<Tlink> & {
   type?: 'button' | 'submit' | 'reset'; // for <button>
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   as?: 'link' | 'button'; // force element type
+  download?: boolean | string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
 };
 
 const CTA = (props: CTAProps): JSX.Element => {
@@ -22,6 +24,8 @@ const CTA = (props: CTAProps): JSX.Element => {
     type = 'button',
     onClick,
     as = href ? 'link' : 'button',
+    download = false,
+    target = '_self',
   } = props;
 
   const containerRef = useRef<HTMLAnchorElement & HTMLButtonElement & HTMLDivElement>(null);
@@ -49,11 +53,24 @@ const CTA = (props: CTAProps): JSX.Element => {
     );
   }
 
-  if (as === 'link' && href) {
+  if (as === 'link' && href && !download) {
     return (
       <Link ref={containerRef} href={href} className={cn(styles.main, className)}>
         {content}
       </Link>
+    );
+  }
+  if (as === 'link' && href) {
+    return (
+      <a
+        ref={containerRef}
+        href={(href as string) || ''}
+        download={download}
+        target={target}
+        className={cn(styles.main, className)}
+      >
+        {content}
+      </a>
     );
   }
 

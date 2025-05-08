@@ -175,7 +175,22 @@
     },
     "ContactSection": {
       "heading": "Contact Me",
-      "subHeading": "Let's Get in Touch"
+      "subHeading": "Let's Get in Touch",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/lucas-ralph-995116207/"
+        },
+        {
+          "label": "Github",
+          "href": "https://github.com/Ralph-20"
+        },
+        {
+          "label": "Resume",
+          "href": "/files/LucasRalphResume.pdf",
+          "download": true
+        }
+      ]
     },
     "PictureSection": {
       "heading": "My Photo Gallery",
