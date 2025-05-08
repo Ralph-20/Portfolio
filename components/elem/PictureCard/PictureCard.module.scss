@@ -7,16 +7,43 @@
   margin: 0 auto;
   overflow: hidden;
   border-radius: 20px;
-
-  &:hover {
-    cursor: pointer;
-    .image-overlay {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  &--active {
     img {
       filter: brightness(0.5);
       transform: scale(1.02);
+    }
+    .image-overlay {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      overflow-y: auto;
+    }
+  }
+
+  // &:hover {
+  //   cursor: pointer;
+  //   .image-overlay {
+  //     opacity: 1;
+  //     transform: translateY(0);
+  //   }
+  //   img {
+  //     filter: brightness(0.5);
+  //     transform: scale(1.02);
+  //   }
+  // }
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+
+      .image-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      img {
+        filter: brightness(0.5);
+        transform: scale(1.02);
+      }
     }
   }
 }
@@ -53,6 +80,7 @@
     transform 0.4s ease,
     opacity 0.4s ease;
   pointer-events: none;
+  // overflow-y: scroll;
 }
 
 .image-desc {
@@ -61,6 +89,13 @@
   color: $colors__white;
 }
 
-.main {
-  border: 1px solid red;
+.info-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 5;
+
+  @media (hover: hover) {
+    display: none; // hide on desktop
+  }
 }

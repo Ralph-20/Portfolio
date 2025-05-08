@@ -1,0 +1,29 @@
+@import './../../../styles/sass-resources/sass-resources.scss';
+
+.main {
+  border: 1px solid $colors__white;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: none;
+  @include transition(background-color 0.3s ease-in-out);
+  &--active:hover {
+    cursor: pointer;
+    background-color: $colors__white;
+    .icon {
+      fill: $colors__black;
+    }
+  }
+}
+
+.icon {
+  fill: $colors__white;
+  width: 60%;
+  height: 60%;
+  display: block;
+  @include transition(fill 0.3s ease-in-out);
+}
