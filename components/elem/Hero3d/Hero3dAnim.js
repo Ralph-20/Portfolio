@@ -73,8 +73,15 @@ function MyThree() {
       starGroup.rotation.x += (targetRotationX - starGroup.rotation.x) * easingFactor;
       starGroup.rotation.y += (targetRotationY - starGroup.rotation.y) * easingFactor;
 
+      const maxDistance = sphereRadius * 1.5;
+
       starGroup.children.forEach((star, index) => {
         star.position.add(velocities[index]);
+
+        if (star.position.length() > maxDistance) {
+          star.position.setLength(sphereRadius); // pull it back in
+          velocities[index].negate(); // bounce back in opposite direction
+        }
       });
 
       renderer.render(scene, camera);
