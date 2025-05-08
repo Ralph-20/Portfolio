@@ -122,13 +122,14 @@ const PictureSection = (props: PictureSectionProps): JSX.Element => {
               (swiper.params.navigation as NavigationOptions).nextEl = nextRef.current;
               // (swiper.params.pagination as PaginationOptions).el = paginationRef.current;
             }}
-            spaceBetween={30}
             breakpoints={{
               0: {
+                spaceBetween: 60,
                 slidesPerView: 1,
                 effect: 'slide',
               },
               768: {
+                spaceBetween: 30,
                 slidesPerView: 2,
                 effect: 'coverflow',
                 coverflowEffect: {
