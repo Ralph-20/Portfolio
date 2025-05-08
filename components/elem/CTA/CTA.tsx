@@ -9,7 +9,7 @@ export type CTAProps = Partial<Tlink> & {
   className?: string;
   children?: React.ReactNode;
   type?: 'button' | 'submit' | 'reset'; // for <button>
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   as?: 'link' | 'button'; // force element type
 };
 

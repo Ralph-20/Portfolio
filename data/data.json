@@ -4,15 +4,19 @@
       "tabs": [
         {
           "label": "About",
-          "href": "/"
+          "href": "#about"
         },
         {
-          "label": "Expertise",
-          "href": "/"
+          "label": "Skills",
+          "href": "#skills"
+        },
+        {
+          "label": "Experience",
+          "href": "#experience"
         },
         {
           "label": "Contact",
-          "href": "/"
+          "href": "#contact"
         }
       ]
     }
@@ -35,6 +39,10 @@
       "image": {
         "src": "/images/pfp.jpg",
         "alt": "Lucas Ralph in Chicago"
+      },
+      "cta": {
+        "label": "More About Me",
+        "href": "#gallary"
       }
     },
     "Expertise": {
@@ -51,12 +59,12 @@
           "icon": "/images/icons/react.svg"
         },
         {
-          "title": "Software Implementation Consult",
+          "title": "Software Implementation Consultant",
           "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "company": "FAST Enterprises",
           "link": "https://www.fastenterprises.com/",
-          "location": "On Site",
-          "period": "Apr 2022 - Sep 2022",
+          "location": "On-site - KCMO",
+          "period": "April - September 2022",
           "icon": "/images/icons/nodejs.svg"
         },
         {
@@ -64,8 +72,8 @@
           "description": "LJR Dev is a modern web development studio focused on crafting high-performance, visually polished websites and applications. Specializations in web applications with CMS integrations.",
           "descriptionLong": "LJR Dev is a modern web development studio focused on crafting high-performance, visually polished websites and applications. Specializations in web applications with CMS integrations and scalabale APIs. Whether it's building from scratch or optimizing existing platforms, we deliver clean, maintainable code with attention to detail. With history in helping out Minnesota ran local businesses, to startups and enterprise clients, we bring ideas to life through smart, efficient development.",
           "company": "LJR Dev",
-          "location": "My Home",
-          "period": "Apr 2020 - Current",
+          "location": "Hybrid - MN",
+          "period": "April 2020 - Present",
           "link": "https://www.linkedin.com/in/lucas-ralph-995116207/",
           "icon": "/images/icons/devops.svg"
         }
@@ -76,7 +84,7 @@
       "cards": [
         {
           "heading": "GSAP / Framer / Swiper Animations",
-          "eyebrow": "Skilled with JavaScript Animation Libraries",
+          "eyebrow": "JavaScript Animation Libraries",
           "description": "Expert in creating seamless animations with GSAP, from scroll-triggered effects to complex timelines. Used to enhance interactivity and visual polish across modern websites. I have used ",
           "link": "https://greensock.com/gsap/",
           "image": {
@@ -87,8 +95,8 @@
         },
         {
           "heading": "Next.js / React / Vue",
-          "eyebrow": "Modern Frontend Frameworks",
-          "description": "Skilled in building fast, dynamic applications with Next.js, Vue, and React. At my current agency, One North, I get a broad mix between all the modern frameworks. I use this knowledge to stay on top of best practices, and develop scalable interfaces with clean component logic and state management.",
+          "eyebrow": "Modern Front End Frameworks",
+          "description": "I'm skilled in building fast, dynamic applications in a variety of modern front end frameworks, including Next.js, Vue, and React. In my current agency role at One North, I get a broad mix of experience across all of them. This keeps me on top of best practices, allowing me to develop scalable interfaces with clean component logic and state management.",
           "link": "https://nextjs.org/",
           "image": {
             "src": "/images/skills/nextjs.png",
@@ -167,7 +175,7 @@
     },
     "ContactSection": {
       "heading": "Contact Me",
-      "subHeading": "Lets Get in Touch"
+      "subHeading": "Let's Get in Touch"
     },
     "PictureSection": {
       "heading": "My Photo Gallery",
@@ -178,7 +186,7 @@
             "alt": "Lucas Ralph in Chicago",
             "fill": true
           },
-          "description": "Although I work remote, I do get the chance to travel to Chicago every so often, and when I do ~ I capitalize on that opportunity! I love walking around the city, and the pizza is amazing. The last time I went, I got the change to check out the Chicago museum of science and industry and walk along the board walk, already can't wait for next time ...."
+          "description": "Although I work remote, I do get the chance to travel to Chicago every so often, and - when I do - I capitalize on that opportunity! I love walking around the city, and I always make time to stop for some of that amazing pizza. The last time I went, I visited the Museum of Science and Industry and explored Navy Pier. I’m already looking forward to my next trip to the Windy City!"
         },
         {
           "image": {
@@ -186,7 +194,7 @@
             "alt": "Home Gym",
             "fill": true
           },
-          "description": "This picture captures a couple of my favorite hobbies ~ staying active, and building things. I’ve been passionate about staying active ever since I was a kid, and weightlifting has been a big part of my life since high school. Recently, I converted my backyard shed into a home gym ~ so now everything I need is just a few steps away. This project also ties into my love for building things ~ from websites and microcontrollers, to a full-on gym, I enjoy seeing ideas from start to finish, and learning everything I can along the way!"
+          "description": "This picture captures a couple of my favorite hobbies: staying active, and building things. I’ve been passionate about staying active ever since I was a kid, and weightlifting has been a big part of my life since high school. Recently, I converted my backyard shed into a home gym, so now everything I need is just a few steps away. This project also ties into my love for building things, from websites and microcontrollers, to a full-on gym. I enjoy seeing ideas through from start to finish, and learning everything I can along the way!"
         },
         {
           "image": {
@@ -202,7 +210,7 @@
             "alt": "State Fair",
             "fill": true
           },
-          "description": "The state fair! I love going to the state fair every year, and this year was no exception. I tried all the classic foods, from cheese curds and corn on the cob, to a paddle flight of castle danger. However my favorite / most intriguing part from this past year would have to be the Mini Donut beer. If you haven't been to the MN state fair before, I highly recommend it!"
+          "description": "The state fair! I love going to the state fair every year, and this year was no exception. I tried all the classic foods, from cheese curds and corn on the cob, to a paddle flight of castle danger. However my favorite / most intriguing find from this past year would have to be the Mini Donut beer from Lift Bridge. If you haven't been to the MN state fair before, I highly recommend it!"
         },
         {
           "image": {
@@ -218,7 +226,7 @@
             "alt": "Embedded Systems",
             "fill": true
           },
-          "description": "A fun embedded systems project! I worked on with a Raspberry Pi and some GPIO pins to create a microcontroller for some I/O at a bar in the Minneapolis up town area. The device would play a specified song on button input, and self hosted a website that allowed a user on the same network to upload their own audio files to change out which sound clip each button would play."
+          "description": "A fun embedded systems project! I worked with a Raspberry Pi leveraging GPIO pins I/O to create a microcontroller for a bar in the Minneapolis up town area. The device would play a specified song on button input, and self hosted a website that allowed users on the same network to upload their own audio files to change out which sound clip each button would play."
         },
         {
           "image": {
@@ -234,7 +242,7 @@
             "alt": "York, England",
             "fill": true
           },
-          "description": "A fun fact about me is that I'm half English! I was born in the U.S., but my dad is from England, which is where that entire half of my family still lives (Grandmother and Grandfather in the pic above). It's hard living so far away from people I love so much, but it does make for a good excuse to have another trip back across the pond to see them, and visit England once more ~ which is always welcomed! :)"
+          "description": "A fun fact about me is that I'm half English! I was born in the U.S., but my dad is from England, which is where that entire half of my family still lives (Grandmother and Grandfather in the pic above). It's hard living so far away from people I love so much, but it does make for a good excuse to have another trip back across the pond to check up on them, and visit England once more ~ which is always welcomed! :)"
         }
       ]
     }

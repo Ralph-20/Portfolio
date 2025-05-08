@@ -12,10 +12,14 @@ export type AboutProps = {
   secondaryHead: string;
   description: string;
   image: ImageProps;
+  cta: {
+    label: string;
+    href: string;
+  };
 };
 
 const About = (props: AboutProps): JSX.Element => {
-  const { headline, secondaryHead, description, image } = props || {};
+  const { headline, secondaryHead, description, image, cta } = props || {};
   const containerRef = useRef<HTMLDivElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
 
@@ -42,25 +46,27 @@ const About = (props: AboutProps): JSX.Element => {
   );
 
   return (
-    <div className={cn(styles.main, 'spacer-L')} ref={containerRef}>
-      <div className={cn('container-10', styles.wrapper)}>
-        <div className={styles.container}>
-          <div className={styles['content-left']}>
-            <div className={styles['heading-container']}>
-              <Text field={headline} className={styles.heading} />
-              <Text field={secondaryHead} className={styles.secondaryHead} />
+    <section id="about">
+      <div className={cn(styles.main, 'spacer-L')} ref={containerRef}>
+        <div className={cn('container-10', styles.wrapper)}>
+          <div className={styles.container}>
+            <div className={styles['content-left']}>
+              <div className={styles['heading-container']}>
+                <Text field={headline} className={styles.heading} />
+                <Text field={secondaryHead} className={styles.secondaryHead} />
+              </div>
+              <Text field={description} className={styles.description} />
+              <CTA className={styles.cta} {...cta} as={'link'} />
             </div>
-            <Text field={description} className={styles.description} />
-            <CTA className={styles.cta} label="More About Me" href={'#about'} />
-          </div>
-          <div className={styles['content-right']}>
-            <div className={styles['image-container']} ref={imageContainerRef}>
-              <Image {...image} fill={true} className={styles.image} />
+            <div className={styles['content-right']}>
+              <div className={styles['image-container']} ref={imageContainerRef}>
+                <Image {...image} fill={true} className={styles.image} />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

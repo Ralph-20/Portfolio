@@ -106,7 +106,7 @@ const ContactForm = (_props: ContactFormProps): JSX.Element => {
           </label>
           <textarea
             id="message"
-            placeholder="Reason for contact"
+            placeholder="Tell me a bit about what you're looking for!"
             rows={5}
             className={cn(styles.input, styles['text-area'])}
             {...register('message')}

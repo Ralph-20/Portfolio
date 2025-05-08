@@ -8,14 +8,16 @@
   overflow: hidden;
   border-radius: 20px;
 
-  &:hover .image-overlay {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  &:hover img {
-    filter: brightness(0.5);
-    transform: scale(1.02);
+  &:hover {
+    cursor: pointer;
+    .image-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    img {
+      filter: brightness(0.5);
+      transform: scale(1.02);
+    }
   }
 }
 

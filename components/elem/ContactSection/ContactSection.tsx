@@ -12,15 +12,17 @@ const ContactSection = (props: ContactSectionProps): JSX.Element => {
   const { heading, subHeading } = props || {};
 
   return (
-    <div className={cn(styles.main, 'spacer-L')}>
-      <div className={cn('container-10', styles.wrapper)}>
-        <div className={cn('heading-container')}>
-          <Text field={heading} tag="h3" className={styles.heading} />
-          <Text field={subHeading} tag="h3" className={styles.subHeading} />
+    <section id="contact">
+      <div className={cn(styles.main, 'spacer-L')}>
+        <div className={cn('container-10', styles.wrapper)}>
+          <div className={cn('heading-container')}>
+            <Text field={heading} tag="h3" className={styles.heading} />
+            <Text field={subHeading} tag="h3" className={styles.subHeading} />
+          </div>
+          <ContactForm />
         </div>
-        <ContactForm />
       </div>
-    </div>
+    </section>
   );
 };
 
