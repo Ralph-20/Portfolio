@@ -2,7 +2,6 @@ import cn from 'classnames';
 import styles from './ContactSection.module.scss';
 import Text from '@/components/helpers/Text';
 import ContactForm from '@/components/elem/ContactForm';
-import CircleCTA from '../CircleCTA';
 import CTA from '../CTA';
 
 export type ContactSectionProps = {
