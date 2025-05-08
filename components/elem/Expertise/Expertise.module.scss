@@ -45,9 +45,18 @@
   transition: color 0.75s;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   justify-content: space-between;
   color: rgba($color: $colors__white, $alpha: 0.5);
-  &:hover {
+  @media (hover: hover) {
+    &:hover {
+      .label {
+        color: $colors__white;
+      }
+    }
+  }
+  // Touch devices: default white label color
+  @media (pointer: coarse) {
     .label {
       color: $colors__white;
     }
@@ -64,6 +73,13 @@
   }
   padding-block: var(--spacing-m);
   border-bottom: solid 1px rgba($color: $colors__white, $alpha: 0.5);
+
+  &--active .company {
+    transform: translateY(-250%);
+  }
+  &--active .description {
+    transform: translateY(0%);
+  }
 }
 
 .label {
@@ -85,6 +101,20 @@
   position: relative;
   overflow: hidden;
   height: 3rem;
+  // max-height: 3rem;
+  transition: height 0.4s ease;
+}
+
+@media (pointer: coarse) {
+  .item--active {
+    .desc-container {
+      height: 12rem;
+      // max-height: 12rem; // enough for a couple lines
+    }
+    .company {
+      opacity: 0;
+    }
+  }
 }
 
 .company,
@@ -105,12 +135,14 @@
   z-index: 0;
 }
 
-.item:hover .company {
-  transform: translateY(-250%);
-}
+@media (hover: hover) {
+  .item:hover .company {
+    transform: translateY(-250%);
+  }
 
-.item:hover .description {
-  transform: translateY(0%);
+  .item:hover .description {
+    transform: translateY(0%);
+  }
 }
 
 @include respond-to(tablet) {
@@ -131,4 +163,15 @@
     }
     padding-block: var(--spacing-m);
   }
+}
+
+.info-button {
+  position: relative;
+  z-index: 10;
+}
+
+.header-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }

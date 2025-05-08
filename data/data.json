@@ -150,9 +150,20 @@
           }
         },
         {
+          "heading": "TypeScript",
+          "eyebrow": "Type Safety, Interfaces, Tooling",
+          "description": "Every day now I primarily write in TypeScript. It's great for creating strongly typed JavaScript that improves code quality, clarity, and early on bug catching across the large-scale apps that I help create and maintain. Confident using interfaces, generics, and utility types to catch bugs early and enable better editor tooling and refactoring.",
+          "link": "https://www.typescriptlang.org/",
+          "image": {
+            "src": "/images/skills/ts.png",
+            "alt": "TypeScript logo on a blue background",
+            "fill": true
+          }
+        },
+        {
           "heading": "JavaScript",
           "eyebrow": "Core Web Language",
-          "description": "Proficient in JavaScript across both browser and Node.js. I write modular, modern ES6+ code with an emphasis on readability, reusability, and performance. If you can master true JS fundamentals, you can master any framework / animation / task at hand.",
+          "description": "While these days I mostly write in TypeScript, I have no problem working on and reviewing legacy projects in JavaScript across both browser and Node.js. I write modular, modern ES6+ code with an emphasis on readability, reusability, and performance. If you can master true JS fundamentals, you can master any framework / animation / task at hand.",
           "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
           "image": {
             "src": "/images/skills/js.webp",

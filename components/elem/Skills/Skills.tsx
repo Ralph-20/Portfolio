@@ -98,7 +98,6 @@ const Skills = (props: SkillsProps): JSX.Element => {
             effect="coverflow"
             loop={true}
             centeredSlides={true}
-            initialSlide={1}
             coverflowEffect={{
               rotate: 30,
               stretch: 0,
@@ -118,9 +117,11 @@ const Skills = (props: SkillsProps): JSX.Element => {
             breakpoints={{
               0: {
                 slidesPerView: 1,
+                initialSlide: 0,
               },
               768: {
                 slidesPerView: 2,
+                initialSlide: 1,
               },
             }}
             spaceBetween={75}

@@ -1,9 +1,10 @@
 import cn from 'classnames';
 import styles from './Expertise.module.scss';
 import Text from '@/components/helpers/Text';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap, SplitText } from '@/utils/gsap';
+import InfoButton from '@/components/helpers/InfoButton';
 
 export type ExpertiseProps = {
   headline: string;
@@ -25,7 +26,14 @@ const Expertise = (props: ExpertiseProps): JSX.Element => {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const subHeadingRef = useRef<HTMLHeadingElement>(null);
 
-  // TODO: add fade up animation similar to button hover, and add in description in a similar hover state manner
+  const [isTouch, setIsTouch] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsTouch(window.matchMedia('(pointer: coarse)').matches);
+    }
+  }, []);
 
   useGSAP(
     () => {
@@ -85,26 +93,41 @@ const Expertise = (props: ExpertiseProps): JSX.Element => {
               )}
             </div>
             <ul className={styles.list}>
-              {items?.map((item, index) => (
-                <li key={index}>
-                  <a
-                    className={styles.item}
-                    href="https://www.linkedin.com/company/one-north-interactive/"
-                  >
-                    <div className={styles['item--left']}>
-                      <Text field={item.title} className={styles['label']} />
-                      <div className={styles['desc-container']}>
-                        {item.company && <Text field={item.company} className={styles.company} />}
-                        <Text field={item.description} className={styles.description} />
+              {items?.map((item, index) => {
+                const isActive = isTouch && activeIndex === index;
+                return (
+                  <li key={index}>
+                    <a
+                      className={cn(styles.item, { [styles['item--active']]: isActive })}
+                      href="https://www.linkedin.com/company/one-north-interactive/"
+                    >
+                      <div className={styles['item--left']}>
+                        <div className={styles['header-wrapper']}>
+                          <Text field={item.title} className={styles['label']} />
+                          {isTouch && (
+                            <InfoButton
+                              className={styles['info-button']}
+                              isActive={isActive}
+                              onClick={(e) => {
+                                e.preventDefault(); // prevent anchor click
+                                setActiveIndex(activeIndex === index ? null : index);
+                              }}
+                            />
+                          )}
+                        </div>
+                        <div className={styles['desc-container']}>
+                          {item.company && <Text field={item.company} className={styles.company} />}
+                          <Text field={item.description} className={styles.description} />
+                        </div>
                       </div>
-                    </div>
-                    <div className={styles['item--right']}>
-                      <Text field={item.period} className={styles.date} />
-                      <Text field={item.location} className={styles.location} />
-                    </div>
-                  </a>
-                </li>
-              ))}
+                      <div className={styles['item--right']}>
+                        <Text field={item.period} className={styles.date} />
+                        <Text field={item.location} className={styles.location} />
+                      </div>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

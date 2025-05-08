@@ -4,7 +4,7 @@ import Info from '../../../assets/svg/info.svg';
 
 export type InfoButtonProps = {
   className?: string;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   isActive?: boolean;
 };
 
