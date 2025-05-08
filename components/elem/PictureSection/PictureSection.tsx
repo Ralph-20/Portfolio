@@ -98,9 +98,9 @@ const PictureSection = (props: PictureSectionProps): JSX.Element => {
           <Text field={heading} tag="h3" className={styles.heading} ref={headingRef} />
           <Swiper
             modules={[Navigation, Pagination, A11y, EffectCoverflow]}
-            effect={'coverflow'}
             centeredSlides={true}
             loop={true}
+            effect="coverflow"
             initialSlide={1}
             coverflowEffect={{
               rotate: 50,
@@ -126,9 +126,18 @@ const PictureSection = (props: PictureSectionProps): JSX.Element => {
             breakpoints={{
               0: {
                 slidesPerView: 1,
+                effect: 'slide',
               },
               768: {
                 slidesPerView: 2,
+                effect: 'coverflow',
+                coverflowEffect: {
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: true,
+                },
               },
             }}
             className={styles.swiper}

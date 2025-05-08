@@ -85,7 +85,7 @@
         {
           "heading": "GSAP / Framer / Swiper Animations",
           "eyebrow": "JavaScript Animation Libraries",
-          "description": "Expert in creating seamless animations with GSAP, from scroll-triggered effects to complex timelines. Used to enhance interactivity and visual polish across modern websites. I have used ",
+          "description": "Expert in creating performant, seamless animations with GSAP, Framer Motion, Swiper, and other modern js animation libraries. From scroll-triggered effects, to complex timeline sequencing, I've got a solid foundation in creating visually pleasing, interactive animations.",
           "link": "https://greensock.com/gsap/",
           "image": {
             "src": "/images/skills/gsap.png",
@@ -96,7 +96,7 @@
         {
           "heading": "Next.js / React / Vue",
           "eyebrow": "Modern Front End Frameworks",
-          "description": "I'm skilled in building fast, dynamic applications in a variety of modern front end frameworks, including Next.js, Vue, and React. In my current agency role at One North, I get a broad mix of experience across all of them. This keeps me on top of best practices, allowing me to develop scalable interfaces with clean component logic and state management.",
+          "description": "I'm skilled in building fast, dynamic applications in a variety of modern FE frameworks. In my current agency role at One North, I get a broad mix of experience across all of them. This keeps me on top of best practices, allowing me to develop scalable interfaces with clean component logic and state management.",
           "link": "https://nextjs.org/",
           "image": {
             "src": "/images/skills/nextjs.png",
@@ -141,7 +141,7 @@
         {
           "heading": "Figma & UX",
           "eyebrow": "Design System Collaboration",
-          "description": "At One North (partnered with Figma), I work closely with designers and UX'rs in Figma on a daily basis through our workflow. I've had the opprotunity to work on and expand on their SDS (simple design system), and expanded it into a monorepo DS leveraging Figma Code Connect and web componentry. Suffice to say, I know my way around Figma.",
+          "description": "At One North (partnered with Figma), I work closely with designers and UX'rs in Figma on a daily basis. I've had the opprotunity to work on and expand on their Simple Design System, and expanded it into a monorepo DS leveraging Figma Code Connect and web componentry. Suffice to say, I know my way around Figma.",
           "link": "https://www.figma.com/",
           "image": {
             "src": "/images/skills/figma.webp",
@@ -152,7 +152,7 @@
         {
           "heading": "TypeScript",
           "eyebrow": "Type Safety, Interfaces, Tooling",
-          "description": "Every day now I primarily write in TypeScript. It's great for creating strongly typed JavaScript that improves code quality, clarity, and early on bug catching across the large-scale apps that I help create and maintain. Confident using interfaces, generics, and utility types to catch bugs early and enable better editor tooling and refactoring.",
+          "description": "Today, I primarily write in TypeScript. It's great for creating strongly typed JS that improves code quality, clarity, and early on bug catching across large-scale apps that I help create and maintain. Confident using interfaces, generics, and utility types to enable better editor tooling and refactoring.",
           "link": "https://www.typescriptlang.org/",
           "image": {
             "src": "/images/skills/ts.png",
@@ -163,7 +163,7 @@
         {
           "heading": "JavaScript",
           "eyebrow": "Core Web Language",
-          "description": "While these days I mostly write in TypeScript, I have no problem working on and reviewing legacy projects in JavaScript across both browser and Node.js. I write modular, modern ES6+ code with an emphasis on readability, reusability, and performance. If you can master true JS fundamentals, you can master any framework / animation / task at hand.",
+          "description": "While these days I mostly write in TypeScript, I have no problem working on and reviewing legacy projects in JavaScript across both browser and Node.js. I prioritize readability, reusability, and performance. If you can master true JS fundamentals, you can master any framework / animation / task at hand.",
           "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
           "image": {
             "src": "/images/skills/js.webp",
@@ -174,7 +174,7 @@
         {
           "heading": "Embedded Systems",
           "eyebrow": "Raspberry Pi, GPIO, Python",
-          "description": "Build small-scale systems with Raspberry Pi and microcontrollers ~ at times hosting web apps to interface with devices on. Familiar with GPIO pin logic, Python scripting, and basic hardware integration.",
+          "description": "Build small-scale systems with Raspberry Pi and microcontrollers ~ at times hosting web apps to interface with devices on. Familiar with GPIO pin logic, Python scripting, and basic hardware integration. My next project is to automate my home via open source Home Assistant software.",
           "link": "https://www.raspberrypi.com/",
           "image": {
             "src": "/images/skills/embedded.png",
@@ -196,7 +196,7 @@
         {
           "heading": "WordPress",
           "eyebrow": "Headless CMS solutions",
-          "description": "Experienced in building headless WordPress applications using GraphQL, MongoDB, and Express. Customize admin interfaces with ACF, integrate with modern frameworks like Next.js, and manage content workflows efficiently. I have written custom plugins and themes from scratch, and understand what's on under the hood.",
+          "description": "Experienced in building headless WordPress applications using GraphQL, MongoDB, and Express. Customize admin interfaces with ACF, integrate with modern frameworks like Next.js, and manage content workflows efficiently. I've written custom plugins and themes from scratch, and understand what's under the hood.",
           "link": "https://wordpress.org/",
           "image": {
             "src": "/images/skills/wp.png",
