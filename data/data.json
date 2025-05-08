@@ -51,7 +51,7 @@
       "items": [
         {
           "title": "Associate Front End Software Developer",
-          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "description": "At One North, I have the opportunity to work on a variety of projects, from building out new features and components, to optimizing existing ones, working closely with designers and UX'rs on a daily basis.",
           "link": "https://www.onenorth.com/",
           "company": "One North",
           "location": "Remote",
@@ -60,7 +60,7 @@
         },
         {
           "title": "Software Implementation Consultant",
-          "description": "Loreum ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          "description": "While at FAST, I worked closely with GenTax users to understand their needs and implement updates to the KCMO tax website, enhancing the experience for thousands of daily users.",
           "company": "FAST Enterprises",
           "link": "https://www.fastenterprises.com/",
           "location": "On-site - KCMO",
@@ -73,7 +73,7 @@
           "descriptionLong": "LJR Dev is a modern web development studio focused on crafting high-performance, visually polished websites and applications. Specializations in web applications with CMS integrations and scalabale APIs. Whether it's building from scratch or optimizing existing platforms, we deliver clean, maintainable code with attention to detail. With history in helping out Minnesota ran local businesses, to startups and enterprise clients, we bring ideas to life through smart, efficient development.",
           "company": "LJR Dev",
           "location": "Hybrid - MN",
-          "period": "April 2020 - Present",
+          "period": "April 2021 - Present",
           "link": "https://www.linkedin.com/in/lucas-ralph-995116207/",
           "icon": "/images/icons/devops.svg"
         }
@@ -107,7 +107,7 @@
         {
           "heading": "HTML5 Semantics",
           "eyebrow": "Web Fundamentals",
-          "description": "Write clean, accessible, and semantic HTML5 markup. My approach focuses on performance, SEO readiness, and cross-browser compatibility from the ground up.",
+          "description": "I prioritize writing clean, accessible, and semantic HTML5 markup. My approach focuses on performance, SEO readiness, and cross-browser compatibility from the ground up. It's important to make sure to structure your markup correctly, as it can have a huge impact on how your site may be indexed and crawled.",
           "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
           "image": {
             "src": "/images/skills/html.png",
@@ -168,6 +168,39 @@
           "image": {
             "src": "/images/skills/embedded.png",
             "alt": "Raspberry Pi board and GPIO pins",
+            "fill": true
+          }
+        },
+        {
+          "heading": "CSS & Styling",
+          "eyebrow": "SCSS, BEM, Responsive Design",
+          "description": "Proficient in writing scalable, maintainable CSS. Have used / am proficient in SCSS modules, BEM naming, and utility classes and mixins. Focus on creating responsive, accessible designs with pixel precision and strong layout control. I also find it fun to explore complex css animations and sequences. ",
+          "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+          "image": {
+            "src": "/images/skills/css.png",
+            "alt": "CSS code editor snippet",
+            "fill": true
+          }
+        },
+        {
+          "heading": "WordPress",
+          "eyebrow": "Headless CMS solutions",
+          "description": "Experienced in building headless WordPress applications using GraphQL, MongoDB, and Express. Customize admin interfaces with ACF, integrate with modern frameworks like Next.js, and manage content workflows efficiently. I have written custom plugins and themes from scratch, and understand what's on under the hood.",
+          "link": "https://wordpress.org/",
+          "image": {
+            "src": "/images/skills/wp.png",
+            "alt": "WordPress admin dashboard interface",
+            "fill": true
+          }
+        },
+        {
+          "heading": "Docker",
+          "eyebrow": "Multi-Container Environments",
+          "description": "I use Docker almost daily to run containerized, full-stack applications across local and cloud environments. Manage complex builds involving multiple services (e.g., Node, MongoDB, FE, WP, ...) running in isolated containers.",
+          "link": "https://www.docker.com/",
+          "image": {
+            "src": "/images/skills/docker.webp",
+            "alt": "Docker whale logo with layered containers",
             "fill": true
           }
         }

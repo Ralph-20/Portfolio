@@ -76,6 +76,7 @@
 .description {
   @include fonts__p;
   color: $colors__white;
+  // fix for mobile not being viewable
   position: relative;
   z-index: 3;
 }
@@ -84,6 +85,9 @@
   @include fonts__eyebrow;
   text-align: center;
   color: var(--colors__neon-blue);
+  // fix for mobile not being viewable
+  position: relative;
+  z-index: 3;
 }
 
 .img-container {
