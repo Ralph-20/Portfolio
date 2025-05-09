@@ -71,10 +71,43 @@ const About = (props: AboutProps): JSX.Element => {
           toggleActions: 'restart none none reset',
           once: false,
         },
-        onComplete: () => {
+        onLeave: () => {
+          // Revert DOM to fix layout issues after it plays the first time
           splitPrimary.revert();
           splitSecondary.revert();
-          tl2.current?.set({}, { clearProps: 'all' });
+        },
+        onEnterBack: () => {
+          // Re-split when scrolling back up into view
+          const splitPrimaryBack = new SplitText(headingRef.current, {
+            type: 'chars, words, lines',
+          });
+          const splitSecondaryBack = new SplitText(paragraphRef.current, { type: 'lines' });
+
+          gsap.set(splitPrimaryBack.chars, { y: 100 });
+          gsap.set(splitSecondaryBack.lines, { opacity: 0, xPercent: -10 });
+          gsap.set(ctaRef.current, { opacity: 0, xPercent: -10 });
+
+          gsap
+            .timeline()
+            .to(splitPrimaryBack.chars, {
+              y: 0,
+              stagger: 0.03,
+              duration: 0.5,
+            })
+            .to(splitSecondaryBack.lines, {
+              opacity: 1,
+              xPercent: 0,
+              stagger: 0.1,
+            })
+            .to(ctaRef.current, {
+              opacity: 1,
+              xPercent: 0,
+              duration: 1,
+              onComplete: () => {
+                splitPrimaryBack.revert();
+                splitSecondaryBack.revert();
+              },
+            });
         },
       });
 
