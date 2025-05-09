@@ -43,7 +43,12 @@ const Card = (props: CardProps): JSX.Element => {
         const translateY = ((y - centerY) / rect.height) * 2;
 
         gsap.to(container, {
-          transform: `translate3d(${translateX}%, ${translateY}%, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+          xPercent: translateX,
+          yPercent: translateY,
+          rotateX,
+          rotateY,
+          transformPerspective: 1000,
+          transformOrigin: 'center',
           duration: 0.25,
         });
 

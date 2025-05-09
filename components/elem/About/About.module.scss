@@ -28,6 +28,10 @@
 
 .description {
   @include fonts__p;
+  .line {
+    display: block;
+    will-change: transform, opacity; // help GPU rendering
+  }
 }
 .wrapper {
   display: flex;
