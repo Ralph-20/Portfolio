@@ -98,8 +98,20 @@ const ContactSection = (props: ContactSectionProps): JSX.Element => {
         <div className={cn('container-10', styles.wrapper)}>
           <div className={cn(styles['heading-container'])}>
             <div className={styles.left}>
-              <Text ref={headingRef} field={heading} tag="h3" className={styles.heading} />
-              <Text ref={subHeadingRef} field={subHeading} tag="h3" className={styles.subHeading} />
+              <Text
+                aria-label={heading}
+                ref={headingRef}
+                field={heading}
+                tag="h3"
+                className={styles.heading}
+              />
+              <Text
+                aria-label={subHeading}
+                ref={subHeadingRef}
+                field={subHeading}
+                tag="h3"
+                className={styles.subHeading}
+              />
             </div>
             <div className={styles.right}>
               {links.map((link, index) => (

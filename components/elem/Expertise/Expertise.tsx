@@ -87,9 +87,20 @@ const Expertise = (props: ExpertiseProps): JSX.Element => {
         <div className={cn('container-10', styles.wrapper)}>
           <div className={styles.container}>
             <div className={styles['header-container']}>
-              <Text field={headline} ref={headingRef} tag="h3" className={styles.heading} />
+              <Text
+                field={headline}
+                ref={headingRef}
+                tag="h3"
+                className={styles.heading}
+                aria-label={headline}
+              />
               {subHeadline && (
-                <Text field={subHeadline} className={styles.subhead} ref={subHeadingRef} />
+                <Text
+                  field={subHeadline}
+                  className={styles.subhead}
+                  ref={subHeadingRef}
+                  aria-label={subHeadline}
+                />
               )}
             </div>
             <ul className={styles.list}>

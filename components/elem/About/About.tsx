@@ -4,7 +4,7 @@ import Text from '@/components/helpers/Text';
 import Image, { ImageProps } from 'next/image';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-import { gsap, SplitText } from '@/utils/gsap';
+import { gsap, SplitText, ScrollTrigger } from '@/utils/gsap';
 import CTA from '../CTA';
 
 export type AboutProps = {
@@ -22,7 +22,7 @@ const About = (props: AboutProps): JSX.Element => {
   const { headline, secondaryHead, description, image, cta } = props || {};
   const containerRef = useRef<HTMLDivElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
-  const subHeadingRef = useRef<HTMLHeadingElement>(null);
+  // const subHeadingRef = useRef<HTMLHeadingElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const paragraphRef = useRef<HTMLHeadingElement>(null);
   const ctaRef = useRef<HTMLHeadingElement>(null);
@@ -128,6 +128,22 @@ const About = (props: AboutProps): JSX.Element => {
         duration: 1,
         xPercent: 0,
       });
+
+      // HANDLE RESIZE
+      // let resizeTimeout: ReturnType<typeof setTimeout>;
+
+      // const handleResize = () => {
+      //   clearTimeout(resizeTimeout);
+      //   resizeTimeout = setTimeout(() => {
+      //     ScrollTrigger.refresh();
+      //   }, 250); // Debounce
+      // };
+
+      // window.addEventListener('resize', handleResize);
+
+      // return () => {
+      //   window.removeEventListener('resize', handleResize);
+      // };
     },
     { scope: containerRef, dependencies: [] }
   );
@@ -139,10 +155,21 @@ const About = (props: AboutProps): JSX.Element => {
           <div className={styles.container}>
             <div className={styles['content-left']}>
               <div className={styles['heading-container']}>
-                <Text ref={headingRef} field={headline} className={styles.heading} tag="h3" />
+                <Text
+                  ref={headingRef}
+                  field={headline}
+                  className={styles.heading}
+                  tag="h3"
+                  aria-label={headline}
+                />
                 {/* <Text ref={subHeadingRef} field={secondaryHead} className={styles.secondaryHead} /> */}
               </div>
-              <Text ref={paragraphRef} field={description} className={styles.description} />
+              <Text
+                ref={paragraphRef}
+                field={description}
+                className={styles.description}
+                aria-label={description}
+              />
               <div ref={ctaRef}>
                 <CTA className={styles.cta} {...cta} as={'link'} />
               </div>

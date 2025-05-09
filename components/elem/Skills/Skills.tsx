@@ -92,7 +92,13 @@ const Skills = (props: SkillsProps): JSX.Element => {
     <section id="skills">
       <div className={cn(styles.main, 'spacer-L')} ref={containerRef}>
         <div className={cn('container-10', styles.wrapper)}>
-          <Text field={heading} ref={headingRef} tag="h3" className={styles.heading} />
+          <Text
+            field={heading}
+            ref={headingRef}
+            tag="h3"
+            aria-label={heading}
+            className={styles.heading}
+          />
           <Swiper
             modules={[Navigation, Pagination, A11y, EffectCoverflow]}
             effect="coverflow"
