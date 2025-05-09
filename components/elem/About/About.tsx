@@ -71,6 +71,11 @@ const About = (props: AboutProps): JSX.Element => {
           toggleActions: 'restart none none reset',
           once: false,
         },
+        onComplete: () => {
+          splitPrimary.revert();
+          splitSecondary.revert();
+          tl2.current?.set({}, { clearProps: 'all' });
+        },
       });
 
       tl2.to(splitPrimary.chars, {
