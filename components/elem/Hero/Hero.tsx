@@ -48,8 +48,8 @@ const Hero = (props: HeroProps): JSX.Element => {
         stagger: 0.12,
         y: 0,
         rotateY: 0,
-        ease: 'power4.out',
-        duration: 1.5,
+        ease: 'power2.out',
+        duration: 1.25,
       });
 
       tl.to(splitSecondary.chars, {
