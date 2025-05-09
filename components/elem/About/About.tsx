@@ -4,7 +4,7 @@ import Text from '@/components/helpers/Text';
 import Image, { ImageProps } from 'next/image';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-import { gsap, SplitText, ScrollTrigger } from '@/utils/gsap';
+import { gsap, SplitText } from '@/utils/gsap';
 import CTA from '../CTA';
 
 export type AboutProps = {
