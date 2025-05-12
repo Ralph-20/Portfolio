@@ -297,6 +297,14 @@
         },
         {
           "image": {
+            "src": "/images/album/Hackathon.jpeg",
+            "alt": "HackUIowa Hackathon Winner",
+            "fill": true
+          },
+          "description": "I was a winner of a hackathon! 🏆 Best Data Visualization – HackUIowa ‘23, had a great time, was able to meet a lot of great people and work on an exciting project: over a 36 hour straight hackathon! We built 'Gotta Go Green', a full-stack site that helps users visualize how lifestyle changes impact their carbon footprint. Developed with Flask, Chart.js, and MongoDB, our tool empowers better environmental decisions through clear, interactive graphs."
+        },
+        {
+          "image": {
             "src": "/images/album/UK.jpeg",
             "alt": "York, England",
             "fill": true
