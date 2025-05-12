@@ -5,6 +5,7 @@ import Header from '@/components/elem/Header';
 import data from '@/data/data.json';
 import Cursor from '@/components/elem/Cursor';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export type PrimaryLayoutProps = {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ const PrimaryLayout: React.FC<PrimaryLayoutProps> = ({ children }) => {
       <Header tabs={HeaderData.tabs} />
       {children}
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 };
