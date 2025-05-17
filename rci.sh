@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Remove-Clean-Install script to properly remove and reinstall all cached dependencies
-# Made this script because every time I push/commit to the repo
-# I have to manually remove and reinstall all the dependencies and the webcache
+# Made this script for ease of clean reinstalling dependencies 
 
 # Remove directories
 rm -rf .webpack-cache
