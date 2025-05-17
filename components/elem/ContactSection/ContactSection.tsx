@@ -7,13 +7,20 @@ import { useGSAP } from '@gsap/react';
 import { gsap, SplitText } from '@/utils/gsap';
 import { useRef } from 'react';
 
+export type ContactMedia = {
+  url: string;
+  fileName: string;
+  contentType: string;
+};
+
 export type ContactSectionProps = {
   heading: string;
   subHeading: string;
   links: {
     label: string;
-    href: string;
+    href?: string;
     download?: boolean;
+    media?: ContactMedia | null;
   }[];
 };
 
@@ -114,16 +121,19 @@ const ContactSection = (props: ContactSectionProps): JSX.Element => {
               />
             </div>
             <div className={styles.right}>
-              {links.map((link, index) => (
-                <CTA
-                  className={`cta-global ${styles.cta}`}
-                  key={index}
-                  download={link.download}
-                  href={link.href}
-                  label={link.label}
-                  as={'link'}
-                />
-              ))}
+              {links.map((link, index) => {
+                const isFile = link.download && link.media?.url;
+                return (
+                  <CTA
+                    className={`cta-global ${styles.cta}`}
+                    key={index}
+                    download={isFile ? true : undefined}
+                    href={isFile ? link.media!.url : link.href}
+                    label={link.label}
+                    as="link"
+                  />
+                );
+              })}
             </div>
           </div>
           <div ref={contactFormRef}>

@@ -29,13 +29,6 @@ const Card = (props: CardProps): JSX.Element => {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        // TODO: add in a variant that can have a bg image by doing something similar to the following
-
-        // Future parallax effect for a bg image
-        // const parallaxX = (window.innerWidth / 2 - event.pageX) / 20;
-        // const parallaxY = (window.innerHeight / 2 - event.clientY) / 20;
-        // background.style.transform = `translate(calc(${parallaxX}px - 50%), calc(${parallaxY}px - 50%))`;
-
         // Card transform
         const rotateX = -((y - centerY) / rect.height) * 20;
         const rotateY = ((x - centerX) / rect.width) * 20;
@@ -100,7 +93,22 @@ const Card = (props: CardProps): JSX.Element => {
       <div ref={shineRef} className={styles.shine} />
       <Text field={eyebrow} tag="p" className={styles.eyebrow} />
       <div className={styles['img-container']}>
-        <Image {...image} className={cn(styles.image)} />
+        {image && (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            className={cn(styles.image)}
+            {...(image.fill
+              ? {
+                  fill: true,
+                  sizes: '(max-width: 768px) 100vw, 400px',
+                }
+              : {
+                  width: image.width,
+                  height: image.height,
+                })}
+          />
+        )}
       </div>
       <Text field={heading} tag="h4" className={styles.heading} />
 

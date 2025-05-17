@@ -1,23 +1,26 @@
 import cn from 'classnames';
 import styles from './PrimaryLayout.module.scss';
 import React from 'react';
-import Header from '@/components/elem/Header';
-import data from '@/data/data.json';
+import Header, { HeaderProps } from '@/components/elem/Header';
 import Cursor from '@/components/elem/Cursor';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-export type PrimaryLayoutProps = {
+type HeaderData = {
+  header: {
+    tabs: HeaderProps['tabs'];
+  };
+};
+
+export type PrimaryLayoutProps = HeaderData & {
   children: React.ReactNode;
 };
 
-const PrimaryLayout: React.FC<PrimaryLayoutProps> = ({ children }) => {
-  const HeaderData = data.GlobalData.Header;
-
+const PrimaryLayout: React.FC<PrimaryLayoutProps> = ({ children, header }) => {
   return (
     <div className={cn(styles.main)}>
       <Cursor />
-      <Header tabs={HeaderData.tabs} />
+      <Header tabs={header?.tabs || []} />
       {children}
       <Analytics />
       <SpeedInsights />

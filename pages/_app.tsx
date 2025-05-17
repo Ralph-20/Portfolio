@@ -4,7 +4,9 @@ import type { AppProps } from 'next/app';
 import '../styles/global/global.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <PrimaryLayout>{<Component {...pageProps} />}</PrimaryLayout>;
+  const { header, ...rest } = pageProps;
+
+  return <PrimaryLayout header={header}>{<Component {...rest} />}</PrimaryLayout>;
 }
 
 export default MyApp;

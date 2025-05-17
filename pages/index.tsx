@@ -1,6 +1,5 @@
 import Hero from '@/components/elem/Hero';
 import Head from 'next/head';
-import data from '../data/data.json';
 import Hero3d from '@/components/elem/Hero3d';
 import About from '@/components/elem/About';
 import Expertise from '@/components/elem/Expertise';
@@ -8,15 +7,20 @@ import Skills from '@/components/elem/Skills';
 import PictureSection from '@/components/elem/PictureSection';
 import ContactSection from '@/components/elem/ContactSection';
 import { Toaster } from 'react-hot-toast';
+import { GetStaticProps } from 'next';
+import { getAllContent } from '@/cms/getAllContent';
 
-export default function Home() {
-  const HeroData = data.SectionData.Hero;
-  const AboutData = data.SectionData.About;
-  const ExpertiseData = data.SectionData.Expertise;
-  const SkillsData = data.SectionData.Skills;
-  const ContactData = data.SectionData.ContactSection;
-  const PictureData = data.SectionData.PictureSection;
+type HomeProps = {
+  // TODO: Further define and restrict types
+  hero: any;
+  about: any;
+  contact: any;
+  gallery: any;
+  expertise: any;
+  skills: any;
+};
 
+export default function Home({ hero, about, gallery, expertise, contact, skills }: HomeProps) {
   return (
     <>
       <Head>
@@ -33,23 +37,27 @@ export default function Home() {
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </Head>
       <Hero3d />
-      <Hero
-        primaryHeading={HeroData.primHead}
-        eyebrow={HeroData.eyebrow}
-        secondaryHeadings={HeroData.secHeads}
-        heroImg={HeroData.heroImg}
-      />
-      <About {...AboutData} />
-      <Skills {...SkillsData} />
+      <Hero {...hero} />
+      <About {...about} />
+      <Skills {...skills} />
       <Expertise
-        items={ExpertiseData.items}
-        headline={ExpertiseData.headline}
-        subHeadline={ExpertiseData.subHeadline}
+        items={expertise.items}
+        headline={expertise.headline}
+        subHeadline={expertise.subHeadline}
       />
-      <PictureSection {...PictureData} />
-      <ContactSection {...ContactData} />
+      <PictureSection {...gallery} />
+      <ContactSection {...contact} />
       <Toaster position="top-center" toastOptions={{ duration: 5000 }} />
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const content = await getAllContent();
+
+  return {
+    props: content,
+    revalidate: 60,
+  };
+};
 
