@@ -55,7 +55,6 @@ const ContactForm = (_props: ContactFormProps): JSX.Element => {
       }
 
       const responseData = await response.json();
-      // console.log('Success:', responseData); // replace with toast if needed
       toast.success(`Hey ${name}, your message sent successfully!`);
       reset();
     } catch (err) {
