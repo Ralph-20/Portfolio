@@ -162,7 +162,6 @@ const About = (props: AboutProps): JSX.Element => {
                   tag="h3"
                   aria-label={headline}
                 />
-                {/* <Text ref={subHeadingRef} field={secondaryHead} className={styles.secondaryHead} /> */}
               </div>
               <Text
                 ref={paragraphRef}
