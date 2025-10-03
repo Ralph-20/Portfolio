@@ -5,7 +5,12 @@ const nextConfig = {
     additionalData: `@import "./styles/sass-resources/sass-resources";`,
   },
   images: {
-    domains: ['images.ctfassets.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+      },
+    ],
   },
   webpack(config) {
     // editing SVG imports rules

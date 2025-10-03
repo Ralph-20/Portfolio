@@ -78,7 +78,8 @@ const Hero = (props: HeroProps): JSX.Element => {
         </h1>
         <div className={styles['secondary-headings']}>
           <p aria-label={eyebrow} ref={secodaryTextRef} className={styles.subheading}>
-            {eyebrow}
+            {/* {eyebrow} */}
+            {'Software Engineer, Full Stack Developer'}
           </p>
           {/* TODO: make the second word and last word turqoise using gsap */}
         </div>

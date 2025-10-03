@@ -1,5 +1,15 @@
 @import './../../../styles/sass-resources/sass-resources.scss';
 
+.buffer {
+  padding: 20px;
+  margin: -20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .main {
   border: 1px solid $colors__white;
   will-change: transform;
@@ -7,13 +17,18 @@
   transform-style: preserve-3d;
   position: relative;
   overflow: hidden;
-  min-height: 300px;
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+  min-height: unset;
   min-width: 225px;
-  max-width: 500px;
+  max-width: 450px;
   padding: 2.5rem;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  flex: 1 1 300px;
+  align-self: stretch;
   gap: var(--spacing-xs);
   transition: box-shadow 0.6s;
   &:hover {
@@ -91,13 +106,14 @@
 
 .img-container {
   width: 100%;
+  flex-shrink: 0;
   align-self: center;
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
   max-width: 170px;
   @include respond-to(tablet) {
-    max-width: 300px;
+    max-width: 250px;
   }
   position: relative;
   img {

@@ -10,6 +10,7 @@ import { useRef } from 'react';
 const Card = (props: CardProps): JSX.Element => {
   const { heading, eyebrow, description, image } = props || {};
   const containerRef = useRef<HTMLDivElement>(null);
+  const bufferRef = useRef<HTMLDivElement>(null);
   const shineRef = useRef<HTMLDivElement>(null);
   const isTouchDevice =
     typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
@@ -18,9 +19,45 @@ const Card = (props: CardProps): JSX.Element => {
     () => {
       if (isTouchDevice) return;
       const container = containerRef.current;
+      const buffer = bufferRef.current;
       const shine = shineRef.current;
 
-      if (!container || !shine) return;
+      if (!container || !buffer || !shine) return;
+
+      const handleMouseEnter = (event: MouseEvent) => {
+        const rect = container.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Initial smooth rotation toward cursor
+        const rotateX = -((y - centerY) / rect.height) * 20;
+        const rotateY = ((x - centerX) / rect.width) * 20;
+
+        gsap.to(container, {
+          rotateX,
+          rotateY,
+          transformPerspective: 1000,
+          transformOrigin: 'center',
+          duration: 0.4,
+          ease: 'power2.out',
+        });
+
+        // Initial shine orientation
+        const mouseX = x / rect.width;
+        const mouseY = y / rect.height;
+        const shineX = mouseX * -25 + 15;
+        const shineY = mouseY * -25 + 15;
+
+        gsap.to(shine, {
+          x: `${shineX}%`,
+          y: `${shineY}%`,
+          opacity: 0.3,
+          duration: 0.4,
+          ease: 'power2.out',
+        });
+      };
 
       const handleMouseMove = (event: MouseEvent) => {
         const rect = container.getBoundingClientRect();
@@ -65,54 +102,63 @@ const Card = (props: CardProps): JSX.Element => {
 
       const handleMouseLeave = () => {
         gsap.to(container, {
-          transform: 'none',
-          duration: 0.5,
+          rotateX: 0,
+          rotateY: 0,
+          xPercent: 0,
+          yPercent: 0,
+          duration: 0.6,
+          ease: 'power3.out',
         });
         gsap.to(shine, {
           x: '0%',
           y: '0%',
           opacity: 0.5,
           scale: 1,
-          duration: 0.5,
+          duration: 0.6,
+          ease: 'power3.out',
         });
       };
 
-      container.addEventListener('mousemove', handleMouseMove);
-      container.addEventListener('mouseleave', handleMouseLeave);
+      buffer.addEventListener('mouseenter', handleMouseEnter);
+      buffer.addEventListener('mousemove', handleMouseMove);
+      buffer.addEventListener('mouseleave', handleMouseLeave);
 
       return () => {
-        container.removeEventListener('mousemove', handleMouseMove);
-        container.removeEventListener('mouseleave', handleMouseLeave);
+        buffer.removeEventListener('mouseenter', handleMouseEnter);
+        buffer.removeEventListener('mousemove', handleMouseMove);
+        buffer.removeEventListener('mouseleave', handleMouseLeave);
       };
     },
     { scope: containerRef, dependencies: [] }
   );
 
   return (
-    <div ref={containerRef} className={cn(styles.main)}>
-      <div ref={shineRef} className={styles.shine} />
-      <Text field={eyebrow} tag="p" className={styles.eyebrow} />
-      <div className={styles['img-container']}>
-        {image && (
-          <Image
-            src={image.src}
-            alt={image.alt}
-            className={cn(styles.image)}
-            {...(image.fill
-              ? {
-                  fill: true,
-                  sizes: '(max-width: 768px) 100vw, 400px',
-                }
-              : {
-                  width: image.width,
-                  height: image.height,
-                })}
-          />
-        )}
-      </div>
-      <Text field={heading} tag="h4" className={styles.heading} />
+    <div ref={bufferRef} className={styles.buffer}>
+      <div ref={containerRef} className={cn(styles.main)}>
+        <div ref={shineRef} className={styles.shine} />
+        <Text field={eyebrow} tag="p" className={styles.eyebrow} />
+        <div className={styles['img-container']}>
+          {image && (
+            <Image
+              src={image.src}
+              alt={image.alt}
+              className={cn(styles.image)}
+              {...(image.fill
+                ? {
+                    fill: true,
+                    sizes: '(max-width: 768px) 100vw, 400px',
+                  }
+                : {
+                    width: image.width,
+                    height: image.height,
+                  })}
+            />
+          )}
+        </div>
+        <Text field={heading} tag="h4" className={styles.heading} />
 
-      <Text field={description} tag="p" className={styles.description} />
+        <Text field={description} tag="p" className={styles.description} />
+      </div>
     </div>
   );
 };
