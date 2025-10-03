@@ -98,7 +98,7 @@ function MyThree() {
     let delayedRotationX = 0;
     let delayedRotationY = 0;
     const easingFactor = 0.02; // Increased for smoother "bounce" lag effect
-    const delayFactor = 0.05; // Controls the delay before rotation starts following
+    const delayFactor = 0.02; // Controls the delay before rotation starts following (lower = more delay)
     const maxDistance = sphereRadius * 1.5;
 
     // Animation loop
@@ -159,8 +159,8 @@ function MyThree() {
       const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
 
-      targetRotationY = mouseX * 2;
-      targetRotationX = mouseY * 2;
+      targetRotationY = mouseX * 1;
+      targetRotationX = mouseY * 1;
     };
 
     window.addEventListener('resize', handleResize);
