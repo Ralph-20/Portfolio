@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import styles from './Expertise.module.scss';
 import Text from '@/components/helpers/Text';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap, SplitText } from '@/utils/gsap';
 import InfoButton from '@/components/helpers/InfoButton';
@@ -26,14 +26,7 @@ const Expertise = (props: ExpertiseProps): JSX.Element => {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const subHeadingRef = useRef<HTMLHeadingElement>(null);
 
-  const [isTouch, setIsTouch] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsTouch(window.matchMedia('(pointer: coarse)').matches);
-    }
-  }, []);
 
   useGSAP(
     () => {
@@ -105,7 +98,7 @@ const Expertise = (props: ExpertiseProps): JSX.Element => {
             </div>
             <ul className={styles.list}>
               {items?.map((item, index) => {
-                const isActive = isTouch && activeIndex === index;
+                const isActive = activeIndex === index;
                 return (
                   <li key={index}>
                     <a
@@ -115,16 +108,14 @@ const Expertise = (props: ExpertiseProps): JSX.Element => {
                       <div className={styles['item--left']}>
                         <div className={styles['header-wrapper']}>
                           <Text field={item.title} className={styles['label']} />
-                          {isTouch && (
-                            <InfoButton
-                              className={styles['info-button']}
-                              isActive={isActive}
-                              onClick={(e) => {
-                                e.preventDefault(); // prevent anchor click
-                                setActiveIndex(activeIndex === index ? null : index);
-                              }}
-                            />
-                          )}
+                          <InfoButton
+                            className={styles['info-button']}
+                            isActive={isActive}
+                            onClick={(e) => {
+                              e.preventDefault(); // prevent anchor click
+                              setActiveIndex(activeIndex === index ? null : index);
+                            }}
+                          />
                         </div>
                         <div className={styles['desc-container']}>
                           {item.company && <Text field={item.company} className={styles.company} />}

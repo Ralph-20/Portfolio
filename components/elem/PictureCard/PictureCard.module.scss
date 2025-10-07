@@ -90,8 +90,4 @@
   top: 1rem;
   right: 1rem;
   z-index: 5;
-
-  @media (hover: hover) {
-    display: none; // hide on desktop
-  }
 }
