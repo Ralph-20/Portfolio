@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './Skills.module.scss';
 import { CardProps } from '@/types';
@@ -20,7 +22,7 @@ export type SkillsProps = {
   cards: CardProps[];
 };
 
-const Skills = (props: SkillsProps): JSX.Element => {
+const Skills = (props: SkillsProps): React.JSX.Element => {
   const { heading, cards } = props || {};
   const prevRef = useRef<HTMLDivElement | null>(null);
   const nextRef = useRef<HTMLDivElement | null>(null);

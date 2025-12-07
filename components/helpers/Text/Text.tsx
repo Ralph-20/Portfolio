@@ -1,8 +1,8 @@
-import { createElement, forwardRef } from 'react';
+import React, { createElement, forwardRef } from 'react';
 
 export type TextProps = {
   field: string;
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: keyof React.JSX.IntrinsicElements;
   className?: string;
 };
 
@@ -10,7 +10,7 @@ export type TextProps = {
 const Text = forwardRef<HTMLElement, TextProps>(function BaseHelpersText(
   props: TextProps,
   ref
-): JSX.Element {
+): React.JSX.Element {
   const { field, tag = 'div', className } = props || {};
   if (field) {
     return createElement(tag, { className, ref }, field);

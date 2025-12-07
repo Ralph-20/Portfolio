@@ -1,12 +1,13 @@
-import { EmailTemplate } from '../../components/elem/EmailTemplate/EmailTemplate';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { EmailTemplate } from '@/components/elem/EmailTemplate/EmailTemplate';
+import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, message } = req.body;
+    const { name, email, phone, message } = await request.json();
+
     const data = await resend.emails.send({
       from: 'Portfolio@ljrdev.com',
       to: [process.env.CONTACT_FORM_TO || ''],
@@ -15,10 +16,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       react: EmailTemplate({ name, email, phone, message }),
     });
 
-    res.status(200).json(data);
+    return NextResponse.json(data);
   } catch (error) {
     console.error('Error sending email:', error);
-    res.status(400).json(error);
+    return NextResponse.json({ error: 'Failed to send email' }, { status: 400 });
   }
-};
+}
 

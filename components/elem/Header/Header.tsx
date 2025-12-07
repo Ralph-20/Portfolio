@@ -9,7 +9,7 @@ export type HeaderProps = {
   tabs: Tlink[];
 };
 
-const Header = ({ tabs }: HeaderProps): JSX.Element => {
+const Header = ({ tabs }: HeaderProps): React.JSX.Element => {
   return (
     <div className={styles.main}>
       <Link href="#" className={styles['logo-container']}>

@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './ContactForm.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -22,7 +24,7 @@ const schema = z.object({
   message: z.string().min(2, { message: 'Reason for contact is required' }).max(1000),
 });
 
-const ContactForm = (_props: ContactFormProps): JSX.Element => {
+const ContactForm = (_props: ContactFormProps): React.JSX.Element => {
   const {
     register,
     handleSubmit,

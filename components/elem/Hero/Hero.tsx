@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './Hero.module.scss';
 import { TImageData } from '@/types';
@@ -14,7 +16,7 @@ export type HeroProps = {
   heroImg: TImageData;
 };
 
-const Hero = (props: HeroProps): JSX.Element => {
+const Hero = (props: HeroProps): React.JSX.Element => {
   const { primaryHeading, secondaryHeadings, heroImg, eyebrow } = props || {};
 
   const containerRef = useRef<HTMLDivElement>(null);

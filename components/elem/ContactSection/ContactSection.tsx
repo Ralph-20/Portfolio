@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './ContactSection.module.scss';
 import Text from '@/components/helpers/Text';
@@ -24,7 +26,7 @@ export type ContactSectionProps = {
   }[];
 };
 
-const ContactSection = (props: ContactSectionProps): JSX.Element => {
+const ContactSection = (props: ContactSectionProps): React.JSX.Element => {
   const { heading, subHeading, links } = props || {};
 
   const containerRef = useRef<HTMLDivElement>(null);

@@ -1,12 +1,12 @@
-@import './../sass-resources/sass-resources';
-@import './../../node_modules/normalize.css/normalize.css';
-@import 'colors';
-@import 'defaults';
-@import 'spacing';
-@import 'container';
-@import 'spacer';
-@import 'transition';
-@import 'fonts';
+@use './../sass-resources/sass-resources' as *;
+@use './../../node_modules/normalize.css/normalize.css';
+@use 'colors' as *;
+@use 'defaults';
+@use 'spacing';
+@use 'container';
+@use 'spacer';
+@use 'transition';
+@use 'fonts';
 
 // todo: move this to colors folder
 :root {

@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  sassOptions: {
-    additionalData: `@import "./styles/sass-resources/sass-resources";`,
+  // Enable Cache Components ("use cache" directive)
+  experimental: {
+    useCache: true,
   },
   images: {
     remotePatterns: [
@@ -12,6 +13,16 @@ const nextConfig = {
       },
     ],
   },
+  // Turbopack config for SVG handling (Next.js 16+ default bundler)
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
+  // Webpack config for fallback/compatibility
   webpack(config) {
     // editing SVG imports rules
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));

@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './Card.module.scss';
 import { CardProps } from '@/types';
@@ -7,7 +9,7 @@ import { gsap } from '@/utils/gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 
-const Card = (props: CardProps): JSX.Element => {
+const Card = (props: CardProps): React.JSX.Element => {
   const { heading, eyebrow, description, image } = props || {};
   const containerRef = useRef<HTMLDivElement>(null);
   const bufferRef = useRef<HTMLDivElement>(null);

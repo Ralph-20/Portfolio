@@ -1,5 +1,6 @@
-@import 'mixins';
-@import 'breakpoints';
-@import 'fonts';
-@import '../global/colors';
-@import 'transition';
+// sass-resources.scss - forwarding index for all shared Sass utilities
+@forward 'mixins';
+@forward 'breakpoints';
+@forward 'fonts';
+@forward '../global/colors';
+@forward 'transition';

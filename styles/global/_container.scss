@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use './../sass-resources/breakpoints' as *;
 @function rem($px-value) {
   @return math.div($px-value, 16px) * 1rem;
 }

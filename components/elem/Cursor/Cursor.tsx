@@ -1,12 +1,14 @@
+'use client';
+
 import styles from './Cursor.module.scss';
 import { useRef } from 'react';
 import { gsap } from '../../../utils/gsap';
 import cn from 'classnames';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect';
 
-const Cursor = (): JSX.Element => {
+const Cursor = (): React.JSX.Element => {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const ctx = useRef<gsap.Context>();
+  const ctx = useRef<gsap.Context | null>(null);
 
   const mouseMove = (e: MouseEvent) => {
     const xTo = gsap.quickTo(cursorRef.current, 'x', { duration: 0.4, ease: 'power3' }),
@@ -27,7 +29,7 @@ const Cursor = (): JSX.Element => {
   };
 
   useIsomorphicLayoutEffect(() => {
-    var isMobile = /Mobi/i.test(window.navigator.userAgent);
+    const isMobile = /Mobi/i.test(window.navigator.userAgent);
     if (isMobile) return;
     ctx.current = gsap.context(() => {
       window.addEventListener('mousemove', mouseMove);

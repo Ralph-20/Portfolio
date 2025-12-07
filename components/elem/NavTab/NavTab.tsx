@@ -7,7 +7,7 @@ export type NavTabProps = {
   tab: Tlink;
 };
 
-const NavTab = ({ tab }: NavTabProps): JSX.Element => {
+const NavTab = ({ tab }: NavTabProps): React.JSX.Element => {
   return (
     <Link href={tab.href} className={styles.link}>
       <Text tag="span" field={tab.label} className={styles.linkLabel} />

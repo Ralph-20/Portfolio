@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './About.module.scss';
 import Text from '@/components/helpers/Text';
@@ -18,7 +20,7 @@ export type AboutProps = {
   };
 };
 
-const About = (props: AboutProps): JSX.Element => {
+const About = (props: AboutProps): React.JSX.Element => {
   const { headline, secondaryHead, description, image, cta } = props || {};
   const containerRef = useRef<HTMLDivElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);

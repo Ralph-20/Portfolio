@@ -1,7 +1,9 @@
 @use 'sass:map';
 
 // Usage and documentation can be found at: https://eduardoboucas.github.io/include-media/
-@import './../../node_modules/include-media/dist/include-media';
+// Forward include-media so its mixins are available to consumers
+@forward './../../node_modules/include-media/dist/include-media';
+@use './../../node_modules/include-media/dist/include-media' as *;
 
 $breakpoints__phone-small: 375px;
 $breakpoints__phone: 450px;

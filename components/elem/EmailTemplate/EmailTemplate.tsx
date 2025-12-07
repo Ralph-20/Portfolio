@@ -7,12 +7,12 @@ interface EmailTemplateProps {
   message: string;
 }
 
-export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
+export const EmailTemplate = ({
   name,
   email,
   phone,
   message,
-}) => (
+}: EmailTemplateProps): React.JSX.Element => (
   <div>
     <h2>Submitted by: {name}, </h2>
     <br />

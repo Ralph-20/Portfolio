@@ -1,4 +1,4 @@
-@import './../../../styles/sass-resources/sass-resources.scss';
+@use './../../../styles/sass-resources/sass-resources.scss' as *;
 
 .buffer {
   padding: 20px;

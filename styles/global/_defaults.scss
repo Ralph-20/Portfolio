@@ -1,3 +1,6 @@
+@use 'colors' as *;
+@use './../sass-resources/mixins' as *;
+
 html {
   font-size: 100%;
   box-sizing: border-box;

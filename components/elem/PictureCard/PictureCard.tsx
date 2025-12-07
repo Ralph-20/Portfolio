@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './PictureCard.module.scss';
 import Image from 'next/image';
@@ -12,7 +14,7 @@ export type PictureCardProps = {
   className?: string;
 };
 
-const PictureCard = ({ image, description, className }: PictureCardProps): JSX.Element => {
+const PictureCard = ({ image, description, className }: PictureCardProps): React.JSX.Element => {
   const [showInfo, setShowInfo] = useState(false);
 
   return (

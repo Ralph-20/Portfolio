@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './SlideShow.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,7 +17,7 @@ export type SlideShowProps = {
   images: TImageData[];
 };
 
-const SlideShow = (props: SlideShowProps): JSX.Element => {
+const SlideShow = (props: SlideShowProps): React.JSX.Element => {
   const { images } = props;
 
   if (!images) {

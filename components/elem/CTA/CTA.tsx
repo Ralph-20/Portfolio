@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './CTA.module.scss';
 import { Tlink } from '@/types';
@@ -15,7 +17,7 @@ export type CTAProps = Partial<Tlink> & {
   target?: '_blank' | '_self' | '_parent' | '_top';
 };
 
-const CTA = (props: CTAProps): JSX.Element => {
+const CTA = (props: CTAProps): React.JSX.Element => {
   const {
     label,
     href,

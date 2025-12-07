@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './PictureSection.module.scss';
 import { TImageData } from '@/types';
@@ -23,7 +25,7 @@ export type PictureSectionProps = {
   }[];
 };
 
-const PictureSection = (props: PictureSectionProps): JSX.Element => {
+const PictureSection = (props: PictureSectionProps): React.JSX.Element => {
   const { heading, pictures } = props || {};
   const prevRef = useRef<HTMLDivElement | null>(null);
   const nextRef = useRef<HTMLDivElement | null>(null);

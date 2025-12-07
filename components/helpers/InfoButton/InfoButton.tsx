@@ -8,7 +8,7 @@ export type InfoButtonProps = {
   isActive?: boolean;
 };
 
-const InfoButton = (props: InfoButtonProps): JSX.Element => {
+const InfoButton = (props: InfoButtonProps): React.JSX.Element => {
   const { className, onClick, isActive = false } = props || {};
 
   return (

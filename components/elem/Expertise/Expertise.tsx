@@ -1,3 +1,5 @@
+'use client';
+
 import cn from 'classnames';
 import styles from './Expertise.module.scss';
 import Text from '@/components/helpers/Text';
@@ -19,7 +21,7 @@ export type ExpertiseProps = {
   }[];
 };
 
-const Expertise = (props: ExpertiseProps): JSX.Element => {
+const Expertise = (props: ExpertiseProps): React.JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { headline, subHeadline, items } = props || {};
 

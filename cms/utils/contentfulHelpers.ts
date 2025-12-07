@@ -21,6 +21,24 @@ export const contentfulToNextImage = (image: ContentfulImage): ImageProps | null
   };
 };
 
+/**
+ * Returns a card-compatible image object with string src.
+ * Use this for CardProps which expects { src: string; alt: string; ... }
+ */
+export const contentfulToCardImage = (
+  image: ContentfulImage
+): { src: string; alt: string; fill?: boolean; width?: number; height?: number } | null => {
+  if (!image?.fields?.file?.url) {
+    return null;
+  }
+
+  return {
+    src: `https:${image.fields.file.url}`,
+    alt: image.fields.title || image.fields.file.fileName || '',
+    fill: true,
+  };
+};
+
 export const contentfulToFile = (asset: ContentfulAsset | null | undefined) => {
   if (!asset?.fields?.file?.url) return null;
 
