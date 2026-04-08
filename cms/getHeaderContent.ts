@@ -48,10 +48,13 @@ export async function getHeaderContent(): Promise<HeaderContent> {
   });
 
   // Ensure we always return a valid HeaderContent
-  if (!result) {
-    return { tabs: [] };
+  const tabs = result?.tabs ?? [];
+
+  // Always include the blog link
+  if (!tabs.some((t) => t.href === '/blog')) {
+    tabs.push({ label: 'Blog', href: '/blog' });
   }
 
-  return result;
+  return { tabs };
 }
 

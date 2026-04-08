@@ -1,0 +1,109 @@
+@use '@/styles/sass-resources/sass-resources' as *;
+
+.prose {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba($colors__white, 0.85);
+
+  h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $colors__white;
+    margin: 48px 0 16px;
+  }
+
+  h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $colors__white;
+    margin: 40px 0 12px;
+  }
+
+  h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $colors__white;
+    margin: 32px 0 8px;
+  }
+
+  p {
+    margin: 0 0 20px;
+  }
+
+  a {
+    color: $colors__neon-blue;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  strong {
+    color: $colors__white;
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 20px;
+    padding-left: 24px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  pre {
+    background: rgba($colors__white, 0.04);
+    border: 1px solid rgba($colors__white, 0.08);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    overflow-x: auto;
+
+    code {
+      font-family: 'Cascadia Code', 'Fira Code', monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba($colors__neon-blue, 0.9);
+      background: none;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  code {
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+    font-size: 0.88em;
+    background: rgba($colors__white, 0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: $colors__neon-blue;
+  }
+
+  blockquote {
+    border-left: 3px solid $colors__neon-blue;
+    margin: 20px 0;
+    padding: 12px 20px;
+    color: rgba($colors__white, 0.7);
+    background: rgba($colors__white, 0.02);
+    border-radius: 0 8px 8px 0;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid rgba($colors__white, 0.08);
+    margin: 40px 0;
+  }
+}
