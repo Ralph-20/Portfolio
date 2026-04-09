@@ -8,11 +8,10 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-xs);
-  width: calc(100% - 24px);
-  max-width: 600px;
-  padding: 10px 16px;
+  justify-content: center;
+  gap: 0;
+  width: auto;
+  padding: 8px 12px;
   border-radius: 100px;
   border: 1px solid rgba($colors__white, 0.08);
   background: rgba(0, 0, 0, 0.4);
@@ -21,6 +20,8 @@
 
   @include respond-to(tablet) {
     top: 16px;
+    justify-content: space-between;
+    gap: var(--spacing-xs);
     width: calc(100% - 4rem);
     max-width: 900px;
     padding: 12px 24px;
@@ -28,13 +29,17 @@
 }
 
 .logo-container {
-  display: flex;
+  display: none;
   align-items: center;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
   cursor: pointer;
   flex-shrink: 0;
+
+  @include respond-to(tablet) {
+    display: flex;
+  }
 
   &:hover {
     opacity: 0.8;
@@ -49,20 +54,12 @@
 .logo {
   height: auto;
   width: auto;
-  max-height: 28px;
-
-  @include respond-to(tablet) {
-    max-height: 35px;
-  }
+  max-height: 35px;
 }
 
 .tabs-container {
   display: flex;
-  gap: 4px;
-
-  @include respond-to(mobile) {
-    gap: var(--spacing-xs);
-  }
+  gap: 2px;
 
   @include respond-to(tablet) {
     gap: var(--spacing-s);
