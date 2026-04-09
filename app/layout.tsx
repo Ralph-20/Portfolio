@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { getHeaderContent } from '@/cms/getHeaderContent';
 import Header from '@/components/elem/Header';
+import Hero3d from '@/components/elem/Hero3d';
 import Cursor from '@/components/elem/Cursor';
 import cn from 'classnames';
 import styles from '@/components/layouts/PrimaryLayout/PrimaryLayout.module.scss';
@@ -38,6 +39,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body>
         <div className={cn(styles.main)}>
+          <Hero3d />
           <Cursor />
           <Header tabs={header.tabs} />
           {children}

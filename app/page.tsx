@@ -1,5 +1,4 @@
 import Hero from '@/components/elem/Hero';
-import Hero3d from '@/components/elem/Hero3d';
 import About from '@/components/elem/About';
 import Expertise from '@/components/elem/Expertise';
 import Skills from '@/components/elem/Skills';
@@ -13,7 +12,6 @@ export default async function HomePage() {
 
   return (
     <>
-      <Hero3d />
       <Hero {...hero} />
       <About {...about} />
       <Skills {...skills} />
