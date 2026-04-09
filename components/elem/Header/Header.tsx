@@ -12,7 +12,7 @@ export type HeaderProps = {
 const Header = ({ tabs }: HeaderProps): React.JSX.Element => {
   return (
     <div className={styles.main}>
-      <Link href="#" className={styles['logo-container']}>
+      <Link href="/" className={styles['logo-container']}>
         <Image
           src="/images/LJRDev.png"
           alt="LJR Dev Logo"
