@@ -1,5 +1,4 @@
 import Hero from '@/components/elem/Hero';
-import Hero3d from '@/components/elem/Hero3d';
 import About from '@/components/elem/About';
 import Expertise from '@/components/elem/Expertise';
 import Skills from '@/components/elem/Skills';
@@ -11,9 +10,25 @@ import { getHomeContent } from '@/cms/getHomeContent';
 export default async function HomePage() {
   const { hero, about, gallery, expertise, contact, skills } = await getHomeContent();
 
+  const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Lucas Ralph',
+    url: 'https://www.ljrdev.com',
+    jobTitle: 'Software Engineer',
+    sameAs: [
+      'https://github.com/Ralph-20',
+      'https://www.linkedin.com/in/lucasralph',
+    ],
+    knowsAbout: ['Next.js', 'TypeScript', 'AI Agents', 'Developer Tools', 'React'],
+  };
+
   return (
     <>
-      <Hero3d />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <Hero {...hero} />
       <About {...about} />
       <Skills {...skills} />

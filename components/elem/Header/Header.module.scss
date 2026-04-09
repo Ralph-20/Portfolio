@@ -2,37 +2,44 @@
 
 .main {
   position: fixed;
-  gap: var(--spacing-xs);
-  &::after {
-    display: block;
-    position: absolute;
-    left: -2rem;
-    top: 0;
-    content: '';
-    width: 100vw;
-    height: 100%;
-    backdrop-filter: blur(6px);
-    z-index: -1;
-  }
-  top: 0;
-  left: 0;
-  width: calc(100% - 4rem);
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
   display: flex;
   align-items: center;
-  padding-block: 1.625rem 1.5rem;
-  margin-inline: 2rem;
-  justify-content: space-between;
-  border-bottom: solid 1px rgba($color: $colors__white, $alpha: 0.5);
+  justify-content: center;
+  gap: 0;
+  width: auto;
+  padding: 8px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba($colors__white, 0.08);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  @include respond-to(tablet) {
+    top: 16px;
+    justify-content: space-between;
+    gap: var(--spacing-xs);
+    width: calc(100% - 4rem);
+    max-width: 900px;
+    padding: 12px 24px;
+  }
 }
 
 .logo-container {
-  display: flex;
+  display: none;
   align-items: center;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
   cursor: pointer;
+  flex-shrink: 0;
+
+  @include respond-to(tablet) {
+    display: flex;
+  }
 
   &:hover {
     opacity: 0.8;
@@ -47,17 +54,14 @@
 .logo {
   height: auto;
   width: auto;
-  max-height: 45px;
-
-  @include respond-to(mobile) {
-    max-height: 35px;
-  }
+  max-height: 35px;
 }
 
 .tabs-container {
   display: flex;
-  gap: var(--spacing-xs);
-  @include respond-to(mobile) {
+  gap: 2px;
+
+  @include respond-to(tablet) {
     gap: var(--spacing-s);
   }
 }

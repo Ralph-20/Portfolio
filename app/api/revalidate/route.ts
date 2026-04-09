@@ -33,9 +33,8 @@ const CONTENT_TYPE_TO_TAG: Record<string, string[]> = {
   contactSection: ['home'],
   contactLink: ['home'],
 
-  // Future: Blog content (uncomment when you add blog)
-  // blogPost: ['blog'],
-  // blogCategory: ['blog'],
+  // Blog content
+  blogPost: ['blog'],
 };
 
 export async function POST(request: NextRequest) {
@@ -60,7 +59,7 @@ export async function POST(request: NextRequest) {
       console.log('[Revalidate] No content type found, revalidating all tags');
       revalidateTag('header', { expire: 0 });
       revalidateTag('home', { expire: 0 });
-      // revalidateTag('blog', { expire: 0 }); // Uncomment when you add blog
+      revalidateTag('blog', { expire: 0 });
 
       return NextResponse.json({
         revalidated: true,
@@ -113,7 +112,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Missing tag parameter' }, { status: 400 });
   }
 
-  const validTags = ['header', 'home']; // Add 'blog' when ready
+  const validTags = ['header', 'home', 'blog'];
   if (!validTags.includes(tag)) {
     return NextResponse.json({ error: `Invalid tag. Valid tags: ${validTags.join(', ')}` }, { status: 400 });
   }

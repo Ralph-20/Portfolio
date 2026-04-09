@@ -8,8 +8,12 @@ export type NavTabProps = {
 };
 
 const NavTab = ({ tab }: NavTabProps): React.JSX.Element => {
+  // Prefix hash-only links with / so they navigate home first
+  const rawHref = String(tab.href);
+  const href = rawHref.startsWith('#') ? `/${rawHref}` : tab.href;
+
   return (
-    <Link href={tab.href} className={styles.link}>
+    <Link href={href} className={styles.link}>
       <Text tag="span" field={tab.label} className={styles.linkLabel} />
     </Link>
   );

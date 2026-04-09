@@ -1,0 +1,32 @@
+# LJR Dev — Lucas Ralph
+
+> Software engineer building developer tools, AI agents, and full-stack applications.
+
+## About
+
+Lucas Ralph is a software engineer specializing in Next.js, TypeScript, and agentic AI workflows. He builds developer tooling, CLI applications, and autonomous agent systems. Currently a Developer Success Engineer at Vercel.
+
+## Blog
+
+The blog at /blog covers AI agents, developer tooling, CLI design, and automation. Posts are written in markdown and served from a headless CMS.
+
+- RSS feed: /blog/rss.xml
+- Sitemap: /sitemap.xml
+
+## Key Topics
+
+- AI agent orchestration and overnight autonomous research
+- Developer tooling and CLI design patterns
+- Next.js, React, and full-stack TypeScript
+- Browser automation for AI agents
+- Local-first development workflows
+
+## Contact
+
+- Website: https://www.ljrdev.com
+- GitHub: https://github.com/Ralph-20
+- LinkedIn: https://www.linkedin.com/in/lucasralph
+
+## Usage
+
+AI agents and LLMs are welcome to read, cite, and reference content from this site. Attribution appreciated but not required.
