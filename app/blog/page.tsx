@@ -23,14 +23,9 @@ export default async function BlogPage() {
       <BlogAnimations />
 
       <div className={styles.header} data-blog-header>
-        <p className={styles.eyebrow}>Writing</p>
         <h1 className={styles.title}>
-          The <span>Blog</span>
+          Journal from the <span>Terminal</span>
         </h1>
-        <p className={styles.subtitle}>
-          Thoughts on AI agents, developer tooling, and building software that works while you
-          sleep.
-        </p>
       </div>
 
       <div className={styles.tags} data-blog-tags>
