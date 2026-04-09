@@ -9,10 +9,24 @@ import Cursor from '@/components/elem/Cursor';
 import cn from 'classnames';
 import styles from '@/components/layouts/PrimaryLayout/PrimaryLayout.module.scss';
 
-export const metadata = {
-  title: 'Lucas Ralph',
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://www.ljrdev.com'),
+  title: {
+    default: 'Lucas Ralph — Software Engineer',
+    template: '%s | Lucas Ralph',
+  },
   description:
-    "Portfolio of Lucas Ralph, Software developer with professional experience developing at One North International Digital Agency, Fast Enterprises, and other private clients. With 5 years of experience and a Computer Science degree from the University of Minnesota, I've got plenty of education and experience to provide the most digitally distinct, visibly pleasing, and accessible experience.",
+    'Software engineer building developer tools, AI agents, and full-stack applications. Specializing in Next.js, TypeScript, and agentic workflows.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Lucas Ralph',
+  },
+  twitter: {
+    card: 'summary',
+  },
   icons: {
     icon: [
       { url: '/favicon/favicon.ico' },
@@ -22,6 +36,11 @@ export const metadata = {
     apple: '/favicon/apple-touch-icon.png',
   },
   manifest: '/favicon/site.webmanifest',
+  alternates: {
+    types: {
+      'application/rss+xml': '/blog/rss.xml',
+    },
+  },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

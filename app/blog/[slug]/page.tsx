@@ -51,8 +51,27 @@ export default async function BlogPostPage({ params }: Props) {
     day: 'numeric',
   });
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
+    author: {
+      '@type': 'Person',
+      name: post.author.name,
+      url: 'https://www.ljrdev.com',
+    },
+    url: `https://www.ljrdev.com/blog/${slug}`,
+    keywords: post.tags.join(', '),
+  };
+
   return (
     <article className={styles.article}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Link href="/blog" className={styles.back}>
         &larr; Back to Blog
       </Link>

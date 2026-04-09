@@ -1,0 +1,5 @@
+# LJR Dev — Lucas Ralph
+
+> Software engineer building developer tools, AI agents, and full-stack applications.
+
+See /llms.txt for full details.
