@@ -1,5 +1,6 @@
 import { getBlogPosts, getBlogTags } from '@/cms/getBlogContent';
 import BlogCard from '@/components/elem/BlogCard';
+import BlogAnimations from './BlogAnimations';
 import styles from './Blog.module.scss';
 import type { Metadata } from 'next';
 
@@ -19,15 +20,20 @@ export default async function BlogPage() {
 
   return (
     <section className={styles.blog}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>Blog</h1>
+      <BlogAnimations />
+
+      <div className={styles.header} data-blog-header>
+        <p className={styles.eyebrow}>Writing</p>
+        <h1 className={styles.title}>
+          The <span>Blog</span>
+        </h1>
         <p className={styles.subtitle}>
           Thoughts on AI agents, developer tooling, and building software that works while you
           sleep.
         </p>
       </div>
 
-      <div className={styles.tags}>
+      <div className={styles.tags} data-blog-tags>
         {tags.map((tag) => (
           <span key={tag} className={styles.tag}>
             {tag}
@@ -35,9 +41,13 @@ export default async function BlogPage() {
         ))}
       </div>
 
+      <div className={styles.divider} data-blog-divider />
+
       <div className={styles.grid}>
-        {posts.map((post) => (
-          <BlogCard key={post.slug} post={post} />
+        {posts.map((post, i) => (
+          <div key={post.slug} data-blog-card data-index={i}>
+            <BlogCard post={post} />
+          </div>
         ))}
       </div>
     </section>
